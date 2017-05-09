@@ -1,0 +1,87 @@
+﻿@model Gam3iaWeb.SponsorshipResearch
+
+@{
+    ViewBag.Title = "انشاء بحث كفالة";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>انشاء بحث كفالة</h2>
+<div class="float_left">
+    @Html.ActionLink("عودة إلي القائمة", "Index")
+</div>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.PoorID, "اسم الحاله", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.DropDownList("PoorID", null, htmlAttributes: new { @class = "selectpicker show-tick form-control", @data_live_search = true })
+                @Html.ValidationMessageFor(model => model.PoorID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ResearcherName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.ResearcherName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ResearcherName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ResearchDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.ResearchDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ResearchDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ResearchResponse, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.ResearchResponse, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ResearchResponse, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ResearchResults, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.ResearchResults, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ResearchResults, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SponsorshipStartDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.SponsorshipStartDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SponsorshipStartDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Comments, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.Comments, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Comments, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+      
+
+        
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-5 col-md-offset-1">
+                <input type="submit" value="إنشاء" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+

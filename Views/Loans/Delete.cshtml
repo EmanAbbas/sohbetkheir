@@ -1,0 +1,281 @@
+﻿@model Gam3iaWeb.Loan
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Loan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LoanCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoanCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BorrowerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BorrowerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telephone1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telephone1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telephone2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telephone2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telephone3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telephone3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telephone4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telephone4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LoanValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoanValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LoanReason)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoanReason)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequestDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequestDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequiredPapersSatisfied)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequiredPapersSatisfied)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasSalaryStatement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasSalaryStatement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MonthlyIncome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MonthlyIncome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReceiveDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReceiveDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsMonthlyPayment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsMonthlyPayment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaymentBehavior)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaymentBehavior)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IrregularPaymentReason)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IrregularPaymentReason)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GuarantorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GuarantorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GuarantorAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GuarantorAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GuarantorPhone1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GuarantorPhone1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GuarantorPhone2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GuarantorPhone2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GuarantorWorkType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GuarantorWorkType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GuarantorWorkAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GuarantorWorkAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GuarantorWorkPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GuarantorWorkPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GuarantorNID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GuarantorNID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GuarantorHasSalaryStatement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GuarantorHasSalaryStatement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AspNetUsers.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AspNetUsers.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Poor.PoorNID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Poor.PoorNID)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

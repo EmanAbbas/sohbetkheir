@@ -1,0 +1,83 @@
+﻿@model Gam3iaWeb.SponsorshipInstallment
+
+@{
+    ViewBag.Title = "تفاصيل قسط الكفالة";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>تفاصيل قسط الكفالة</h2>
+<p class="float_left">
+    @Html.ActionLink("تعديل", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("عودة إلي القائمة", "Index")
+</p>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DueDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DueDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsCalledString)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsCalledString)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CallerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CallerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CallDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CallDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsDeliveredString)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsDeliveredString)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeliveryDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeliveryDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sponsorship.RequestReceiver)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sponsorship.RequestReceiver)
+        </dd>
+
+    </dl>
+</div>
+

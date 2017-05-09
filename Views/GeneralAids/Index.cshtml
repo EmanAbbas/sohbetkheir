@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Gam3iaWeb.GeneralAid>
+
+@{
+    ViewBag.Title = "قائمة المساعدات";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>قائمة المساعدات</h2>
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        @Html.ActionLink("مساعده لحاله جديده", "CreateNew", "GeneralAids", null, new { @class = "btn btn-default", @role = "button" })
+    </div>
+    <div class="col-md-4"> @Html.ActionLink("مساعدة لحاله سابقه", "Create", "GeneralAids", null, new { @class = "btn btn-default", @role = "button" })</div>
+
+</div>
+<br />
+@*@Html.DropDownList("Services", new SelectList(ViewBag.ServicesList), "-- حدد نوع المساعده --", new { @class = "form-control" })*@
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        @using (Html.BeginForm("Index", "GeneralAids", FormMethod.Get))
+        {
+            @Html.Label("اختر نوع المساعده")
+            @Html.DropDownList("ServicesList", null, htmlAttributes: new { @class = "form-control" })
+        }
+        </div>
+    </div>
+        <br />
+
+        <table class="table table-condensed datatable4">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ServiceID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PoorID)
+                    </th>
+
+                    <th>
+                            @Html.DisplayNameFor(model => model.CityName)
+                        </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ReceiveDate)
+                    </th>
+                    <th>
+                            @Html.DisplayNameFor(model => model.Tag)
+                        </th>
+                    @*<th>
+                            @Html.DisplayNameFor(model => model.VolunteerID)
+                        </th>*@
+
+                    <th></th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Service.ServiceName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Poor.PoorName)
+                </td>
+                <td>
+                        @Html.DisplayFor(modelItem => item.CityName)
+                    </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReceiveDate)
+                </td>
+                <td>
+                        @Html.DisplayFor(modelItem => item.Tag)
+                    </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.AspNetUsers.UserName)
+                    </td>*@
+
+
+                <td>
+                    @Html.ActionLink("تعديل", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("التفاصيل", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("حذف", "Delete", new { id = item.ID })
+                </td>
+            </tr>
+            }
+
+        </table>
+
+

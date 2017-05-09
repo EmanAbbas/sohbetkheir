@@ -1,0 +1,58 @@
+﻿@model Gam3iaWeb.Donation
+
+@{
+    ViewBag.Title = "حذف";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>حذف</h2>
+
+<h3>هل أنت واثق من حذف هذا التبرع</h3>
+<div>
+ 
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Donator.DonatorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Donator.DonatorName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DonationValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonationValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunteerID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AspNetUsers.UserName)
+        </dd>
+
+       
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف" class="btn btn-default" /> |
+            @Html.ActionLink("عودة إلي القائمة", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,72 @@
+﻿@model Gam3iaWeb.Models.PoorViewModel
+
+@{
+    ViewBag.Title = "تفاصيل البيانات";
+}
+
+<h2>تفاصيل البيانات</h2>
+
+<div >
+    <p class="float_left">
+        @Html.ActionLink("تعديل", "Edit", new { id = Model.ID }) |
+        @Html.ActionLink("عودة إلي القائمة", "Index")
+    </p>
+    <hr />
+    <div class="form-horizontal disabledform">
+
+       
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PoorNID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.PoorNID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PoorNID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PoorName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.PoorName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PoorName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.CityID, "البلد", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.CityName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CityID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+       
+    </div>
+</div>
+
+
+
+@*<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                ممتلكات الأسره
+            </a>
+        </h4>
+    </div>
+    <div id="collapse4" class="panel-collapse collapse">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-6">
+                    
+
+                    
+
+                    
+                </div>
+                <div class="col-md-6">
+                   
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>*@

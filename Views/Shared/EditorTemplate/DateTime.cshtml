@@ -1,0 +1,15 @@
+﻿@*Format("{0:d}", Model.Date)*@
+@model Nullable<DateTime>
+
+@{
+    DateTime dateTime = DateTime.MaxValue;
+    if (Model == null)
+    {
+        @Html.TextBox("", Model, new { @class = "datefield", type = "date" });
+    }
+    else
+    {
+        dateTime = (System.DateTime)Model;
+        @Html.TextBox("", String.Format("{0:d}", dateTime.ToShortDateString()), new { @class = "datefield", type = "date" })
+    }
+} 

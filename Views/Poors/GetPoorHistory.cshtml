@@ -1,0 +1,98 @@
+﻿
+@{
+    ViewBag.Title = "GetPoorHistory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>عرض تاريخ الحاله</h2>
+@if (ViewBag.RelatedLoanMsg != null)
+{
+<h3>
+    @ViewBag.RelatedLoanMsg
+</h3>
+}
+else
+{
+    <h3> القروض</h3>
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                
+                <th>
+                   اسم المقترض
+                </th>
+                <th>
+                 العنوان
+                </th>
+                <th>
+                   التليفون
+                </th>
+
+
+               
+                <th>
+                  قيمة القرض
+                </th>
+                <th>
+                   الأقساط المدفوعه
+                </th>
+              
+                <th>
+                   اسم المتطوع
+                </th>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.PoorName)
+                    </th>*@
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        @foreach (var item in ViewBag.LoanList)
+        {
+            <tr>
+               
+                <td>
+                   @item.Poor.PoorName
+                </td>
+                <td>
+                    @item.Address
+                </td>
+                <td>
+                    @item.Telephone1
+                </td>
+
+               
+
+                <td>
+                    @item.LoanValue
+                </td>
+                <td>
+                    @item.PaidInstallments
+                </td>
+             
+                <td>
+                    @item.AspNetUsers.UserName
+                </td>
+                <td>
+                    @Html.ActionLink("عرض الأقساط", "GetInstallments", "Loans", new { loanid = item.ID }, null)
+                </td>
+                <td>
+                    @Html.ActionLink("تعديل", "Edit","Loans", new { id = item.ID },null) |
+                    @Html.ActionLink("تفاصيل", "Details", "Loans", new { id = item.ID },null) |
+                    @Html.ActionLink("مسح", "Delete", "Loans", new { id = item.ID },null)
+                </td>
+            </tr>
+        }
+
+    </table>
+
+}
+<h3>
+    @ViewBag.RelatedStudentAidMsg
+</h3>
+<h3>
+    @ViewBag.RelatedPhysicalDonationMsg
+</h3>
+
+
+

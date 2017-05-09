@@ -1,0 +1,460 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title -جمعية صحبة خير</title>
+    @Styles.Render("~/Content/css")
+<link href = "/css/jquery.dataTables.css" rel = "stylesheet" />
+    <link href="/css/dataTables.bootstrap.css" rel="stylesheet" />
+
+    <link href="~/css/bootstrap-select.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="//www.fontstatic.com/f=droid-sans" />
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   
+    <style>
+        .checkbox {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- header -->
+    <div class="header">
+        <div class="logo">
+          <a  class="navbar-brand" href="/"> </a>  <img src="~/images/logo.png" />
+            @*<h1>@Html.ActionLink("  خير", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+</h1>*@
+        </div>
+        <!-- start header menu -->
+        <div class="header-top">
+            <div class="head-nav">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            @*<ul class="nav navbar-nav">
+                                <li>@Html.ActionLink("الرئيسيه", "Index", "Home")</li>
+                                <li>@Html.ActionLink("عن الجمعيه", "About", "Home")</li>
+                                <li>@Html.ActionLink("تواصل معنا", "Contact", "Home")</li>
+                            </ul>*@
+                          
+                            @Html.Partial("_LoginPartial")
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            @*<div class="search-box">
+                <div id="sb-search" class="sb-search">
+                    <form>
+                        <input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
+                        <input class="sb-search-submit" type="submit" value="">
+                        <span class="sb-icon-search"> </span>
+                    </form>
+                </div>
+            </div>*@
+            <div class="clearfix"> </div>
+          
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    <!-- header -->
+    <!-- start banner -->
+    @*<div class="banner">
+        <div class="container-fluid">
+            
+        </div>
+    </div>*@
+    <!-- end banner -->
+    <!-- founder -->
+    
+
+    <div class="container-fluid body-content">
+        
+            <div class="row">
+ @using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+
+                <div class="col-sm-2 col-md-2">
+                    <div class="panel-group" id="accordion">
+
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                        <span class="glyphicon glyphicon-folder-close">
+                                        </span>الحالات
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <table class="table">
+                                        
+                                        <tr>
+                                            <td>
+                                                <span class="glyphicon glyphicon-pencil text-primary"></span>>@Html.ActionLink(" الحالات", "Index", "Poors")
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="glyphicon glyphicon-flash text-success"></span>@Html.ActionLink("بحث الحاله", "Index", "CaseStudies")
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="glyphicon glyphicon-file text-info"></span>@Html.ActionLink("تسليم مساعدة عامه", "Index", "GeneralAids")
+                                            </td>
+                                        </tr>
+                                        @*<tr>
+                                <td>
+                                    <span class="glyphicon glyphicon-comment text-success"></span><a href="http://www.jquery2dotnet.com">Comments</a>
+                                    <span class="badge">42</span>
+                                </td>
+                            </tr>*@
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                        <span class="glyphicon glyphicon-th">
+                                        </span>القرض الحسن
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <table class="table">
+                                        <tr>
+                                            <td>
+                                                @Html.ActionLink("القروض الحاليه", "Index", "Loans") <span class="label label-success">$</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                @Html.ActionLink("متأخر السداد", "Late", "Loans") <span class="label label-success">$</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                @Html.ActionLink("قضايا", "Judged", "Loans") <span class="label label-success">$</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                @Html.ActionLink("قروض مكتمله", "Completed", "Loans") <span class="label label-success">$</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                @Html.ActionLink("أقساط القروض", "Index", "LoanInstallments")
+                                            </td>
+                                        </tr>
+                                        @*<tr>
+                                <td>
+                                    <a href="http://www.jquery2dotnet.com">Shipments</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="http://www.jquery2dotnet.com">Tex</a>
+                                </td>
+                            </tr>*@
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                                        <span class="glyphicon glyphicon-file">
+                                        </span>تبرعات
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFour" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <table class="table">
+                                        <tr>
+                                            <td>
+                                                <span class="glyphicon glyphicon-user"></span>@Html.ActionLink("بيانات المتبرعين", "Index", "Donators")
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="glyphicon glyphicon-usd"></span>@Html.ActionLink("التبرعات الماديه", "Index", "Donations")
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="glyphicon glyphicon-tasks"></span>@Html.ActionLink("التبرعات العينيه", "Index", "PhysicalDonations")
+                                            </td>
+                                        </tr>
+                                        @*<tr>
+                                <td>
+                                    <span class="glyphicon glyphicon-shopping-cart"></span><a href="http://www.jquery2dotnet.com">Shopping Cart</a>
+                                </td>
+                            </tr>*@
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseseven">
+                                        <span class="glyphicon glyphicon-file">
+                                        </span>منتجات
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseseven" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <table class="table">
+                                        <tr>
+                                            <td>
+                                                <span class="glyphicon glyphicon-usd"></span>@Html.ActionLink("منتجات الجمعية", "Index", "Products")
+                                            </td>
+                                        </tr>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+                                        <span class="glyphicon glyphicon-file">
+                                        </span>كفالة
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFive" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <table class="table">
+                                        <tr>
+                                            <td>
+                                                <span class="glyphicon glyphicon-usd"></span>@Html.ActionLink(" الكفلاء", "Index", "Sponsors")
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="glyphicon glyphicon-usd"></span>@Html.ActionLink(" حالات انتظار كفاله", "Index", "Sponsorships")
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="glyphicon glyphicon-usd"></span>@Html.ActionLink(" حالات إعادة بحث", "Research", "Sponsorships")
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="glyphicon glyphicon-usd"></span>@Html.ActionLink(" الحالات المكفوله", "Sponsored", "Sponsorships")
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="glyphicon glyphicon-usd"></span>@Html.ActionLink(" الحالات المرفوضه", "Rejected", "Sponsorships")
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="glyphicon glyphicon-usd"></span>@Html.ActionLink(" حالات تم إخراجها ", "Stopped", "Sponsorships")
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="glyphicon glyphicon-usd"></span>@Html.ActionLink("أبحاث الكفالة", "Index", "SponsorshipResearches")
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="glyphicon glyphicon-usd"></span>@Html.ActionLink("أقساط الكفالة", "Index", "SponsorshipInstallments")
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
+                                        <span class="glyphicon glyphicon-file">
+                                        </span>مساعدة طالب
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseSix" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <table class="table">
+                                        <tr>
+                                            <td>
+                                                <span class="glyphicon glyphicon-file"></span>@Html.ActionLink("مساعدة طالب", "Index", "StudentAids")
+                                            </td>
+                                        </tr>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        @*<div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix1">
+                                        <span class="glyphicon glyphicon-file">
+                                        </span>حسابات
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseSix1" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <table class="table">
+                                        <tr>
+                                            <td>
+                                                <span class="glyphicon glyphicon-file"></span>@Html.ActionLink("حسابات", "Contact", "Home")
+                                            </td>
+                                        </tr>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>*@
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                        <span class="glyphicon glyphicon-user">
+                                        </span>الإدارة
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <table class="table">
+                                        <tr>
+                                            <td>
+                                               @Html.ActionLink(" البلاد", "Index", "Cities")
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                @Html.ActionLink(" بيانات المتطوعين", "Index", "Volunteers")
+                                            </td>
+                                        </tr>
+                                        <tr>
+
+                                            <td>
+                                               @Html.ActionLink("تغيير كلمة السر", "ChangePassword", "Manage")
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                @Html.ActionLink("إضافة مستخدم للنظام", "Register", "Account")
+                                            </td>
+                                        </tr>
+                                                                                                            <tr>
+                                        <td>
+                                        
+                                           @Html.ActionLink("بيانات المستخدمين", "Index", "AspNetUsers")
+                                        </td>
+                                    </tr>
+                                    @*<tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon-trash text-danger"></span><a href="http://www.jquery2dotnet.com" class="text-danger">
+                                                Delete Account
+                                            </a>
+                                        </td>
+                                    </tr>*@
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+}
+                <div class="col-sm-10 col-md-10 body-content1">
+                    @RenderBody()
+                </div>
+            </div>
+       
+       
+
+        </div>
+        <!-- founder -->
+        <div class="footer">
+            <div class="container">
+                <div class="col-md-3 footer-left">
+                    <h3>التليفون</h3>
+                    <p>1 800 603 6035</p>
+                </div>
+                <div class="col-md-3 footer-left">
+                    <h3>البريد الإلكتروني</h3>
+                    <p>البريد الإلكتروني <a href="mailto:info@example.com">info@mycompany.com</a></p>
+                </div>
+                <div class="col-md-3 footer-left">
+                    <h3>تابعنا</h3>
+                    <ul>
+                        <li><a href="#"><i class="facebok"> </i></a></li>
+                        <li><a href="#"><i class="twiter"> </i></a></li>
+                        <li><a href="#"><i class="goog"> </i></a></li>
+                        <li><a href="#"><i class="inst"> </i></a></li>
+                        <div class="clearfix"></div>
+                    </ul>
+                </div>
+                <div class="col-md-3 footer-left">
+                    <h3>العنوان</h3>
+                    <p>
+                       أسيوط ش الجلاء
+                    </p>
+                </div>
+                <div class="clearfix"></div>
+                <div class="foot-bottom">
+                    <p>Copyrights © @DateTime.Now.Year Hope. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+                </div>
+            </div>
+        </div>
+        @*<a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 0;"></span> <span id="toTopHover" style="opacity: 0;"> </span></a>*@
+
+    @Scripts.Render("~/bundles/jquery")
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+    @Scripts.Render("~/bundles/datatables")
+
+   
+    <script src="~/js/lib/jquery.dataTables.js"></script>
+    <script src="~/js/lib/dataTables.bootstrap.js"></script>
+    <script src="~/js/lib/bootstrap-select.js"></script>
+       
+        @RenderSection("scripts", required: false)
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+    <script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+				});
+			});
+    </script>
+    
+</body>
+</html>

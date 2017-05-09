@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Gam3iaWeb.Product>
+
+@{
+    ViewBag.Title = "  منتجات الجمعية ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>  منتجات الجمعية </h2>
+
+<p class="float_left">
+    @Html.ActionLink(" تسجيل منتج جديد ", "Create")
+</p>
+<table class="table table-condensed datatable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SellDate)
+            </th>
+          
+            <th></th>
+        </tr>
+    </thead>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SellDate)
+        </td>
+       
+        <td>
+            @Html.ActionLink("تعديل", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("التفاصيل", "Details", new { id=item.ID }) |
+            @Html.ActionLink("حذف", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Gam3iaWeb.Sponsor>
+
+@{
+    ViewBag.Title = "الكفلاء";
+}
+
+<h2>قائمة الكفلاء</h2>
+
+<p class="float_left">
+    @Html.ActionLink("إدخال بيانات كفيل جديد", "Create")
+</p>
+<table class="table table-condensed datatable4">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.SponsorName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SponsorPhone)
+            </th>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.Job)
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SponsorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SponsorPhone)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.Job)
+            </td>
+            <td>
+                @Html.ActionLink("عرض الأقساط", "GetSponsorInstallments", new { sid = item.ID })
+            </td>
+            <td>
+                @Html.ActionLink("تعديل", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("التفاصيل", "Details", new { id = item.ID }) |
+                @Html.ActionLink("حذف", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>

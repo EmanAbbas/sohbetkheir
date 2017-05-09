@@ -1,0 +1,79 @@
+﻿@model Gam3iaWeb.Sponsor
+
+@{
+    ViewBag.Title = "كفيل جديد";
+}
+
+<div class="float_left">
+    @Html.ActionLink("عودة إلي القائمة", "Index")
+</div>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.SponsorName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.SponsorName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SponsorName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SponsorPhone, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.SponsorPhone, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SponsorPhone, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.SponsorAddress, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.SponsorAddress, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SponsorAddress, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.SponsorNID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.SponsorNID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SponsorNID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Job, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.Job, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Job, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Notes, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.Notes, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Notes, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-5 col-md-offset-1">
+                <input type="submit" value="إنشاء" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+

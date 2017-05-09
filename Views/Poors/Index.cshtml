@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Gam3iaWeb.Models.PoorViewModel>
+
+@{
+    ViewBag.Title = "جميع الحالات ";
+}
+
+<div class="container">
+    <h2>جميع الحالات</h2>
+    @using (Html.BeginForm("Index", "Poors", FormMethod.Get))
+    {
+        <b>بحث بـ :</b>@Html.RadioButton("searchBy", "PoorName", true)<text> اسم الحاله</text>
+        @Html.RadioButton("searchBy", "PoorNID")<text>الرقم القومي</text><br />
+        @Html.TextBox("Search");<input type="submit" value="بحث" />
+    }
+    <p class="float_left">
+        @Html.ActionLink("إضافة محتاج", "Create" ,null, new { @class = "btn btn-default", @role = "button" })
+    </p>
+    <br/>
+    @*<a href="javascript:window.print()">Click to Print This Page</a>*@
+    <table class="table table-hover table-striped datatable_nosearch">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.PoorNID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PoorName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CityID)
+                </th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PoorNID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PoorName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CityName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("مساعدات سابقة ", "GetPoorHistory", new { poorid = item.ID })
+                    </td>
+                    <td>
+                        @Html.ActionLink("عرض أبحاث الحاله ", "GetCaseStudies", new { poorid = item.ID })
+                    </td>
+                    <td>
+                        @Html.ActionLink("تعديل", "Edit", new { id = item.ID }) |
+                        @Html.ActionLink("التفاصيل", "Details", new { id = item.ID }) |
+                        @Html.ActionLink("حذف", "Delete", new { id = item.ID })
+                    </td>
+                </tr>
+            }
+
+</table>
+</div>

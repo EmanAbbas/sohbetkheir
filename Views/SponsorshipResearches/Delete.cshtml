@@ -1,0 +1,67 @@
+﻿@model Gam3iaWeb.SponsorshipResearch
+
+@{
+    ViewBag.Title = "حذف بحث كفالة";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>حذف بحث كفالة</h2>
+
+<h3>هل أنت واثق من حذف هذا العنصر؟</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PoorID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Poor.PoorName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ResearcherName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResearcherName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResearchDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResearchDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResearchResponse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResearchResponse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResearchResults)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResearchResults)
+        </dd>
+
+       
+
+        
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

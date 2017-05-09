@@ -1,0 +1,11 @@
+﻿@model Nullable<DateTime>
+
+<span class="loud-1">
+    @{
+        DateTime dt = DateTime.Now;
+        if (Model != null)
+        {
+            @String.Format("{0:d}", Model)
+        }
+    }
+</span>

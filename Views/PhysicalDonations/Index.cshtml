@@ -1,0 +1,111 @@
+﻿@model IEnumerable<Gam3iaWeb.PhysicalDonation>
+
+@{
+    ViewBag.Title = "قائمة التبرعات العينيه";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>قائمة التبرعات العينيه</h2>
+
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        @Html.ActionLink("تبرع من متبرع جديد", "CreateNew", "PhysicalDonations", null, new { @class = "btn btn-default", @role = "button" })
+    </div>
+    <div class="col-md-4"> @Html.ActionLink("تبرع من متبرع سابق", "Create", "PhysicalDonations", null, new { @class = "btn btn-default", @role = "button" })</div>
+
+</div>
+<br />
+
+<table class="table table-condensed">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DonationType)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.DeviceName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DeviceState)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CanBeFixed)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FixFees)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.ReceiveDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsSelledNotNull)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsDeliveredNotNull)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.SellPrice)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SellDate)
+                </th>*@
+            
+            <th>
+                @Html.DisplayNameFor(model => model.DonatorID)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.PoorID)
+                </th>*@
+            <th></th>
+        </tr>
+    </thead>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonationType)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.DeviceName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeviceState)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CanBeFixed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FixFees)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.ReceiveDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsSelled)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsDelivered)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.SellPrice)
+        </td>*@
+        @*<td>
+            @Html.DisplayFor(modelItem => item.SellDate)
+        </td>*@
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.Donator.DonatorName)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Poor.PoorName)
+        </td>*@
+        <td>
+            @Html.ActionLink("تعديل", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("التفاصيل", "Details", new { id=item.ID }) |
+            @Html.ActionLink("حذف", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

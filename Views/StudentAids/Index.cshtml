@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Gam3iaWeb.StudentAid>
+
+@{
+    ViewBag.Title = "مساعدات الطلبه";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>جميع حالات  مساعدات الطلاب</h2>
+
+<div class="row">
+    <div class="col-md-6"></div>
+    <div class="col-md-3">
+        @Html.ActionLink("مساعدة  لطالب جديده", "CreateNew", "StudentAids", null, new { @class = "btn btn-default", @role = "button" })
+    </div>
+    <div class="col-md-3"> @Html.ActionLink(" مساعدة لحالة طالب سابقة", "Create", "StudentAids", null, new { @class = "btn btn-default", @role = "button" })</div>
+
+</div>
+<br/>
+<table class="table table-condensed">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudyYear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SchoolName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RequiredFeesValue)
+            </th>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.OtherFeesValue)
+            </th>
+           
+           
+            
+            <th></th>
+        </tr>
+    </thead>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudyYear)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SchoolName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RequiredFeesValue)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.OtherFeesValue)
+        </td>
+        
+       
+        
+        <td>
+            @Html.ActionLink("تعديل", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("التفاصيل", "Details", new { id=item.ID }) |
+            @Html.ActionLink("حذف", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

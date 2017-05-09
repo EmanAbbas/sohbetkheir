@@ -1,0 +1,74 @@
+﻿@model Gam3iaWeb.GeneralAid
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>حذف</h2>
+
+<h3>هل أنت واثق من حذف هذا العنصر؟</h3>
+<div>
+  
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PoorID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Poor.PoorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Service.ServiceName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReceiveDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReceiveDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Value)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Value)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.VolunteerID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AspNetUsers.UserName)
+        </dd>*@
+
+        
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف" class="btn btn-default" /> |
+            @Html.ActionLink("عودة إلي القائمة", "Index")
+        </div>
+    }
+</div>

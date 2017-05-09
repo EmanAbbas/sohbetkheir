@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Gam3iaWeb.City>
+
+@{
+    ViewBag.Title = "قائمة البلاد";
+}
+
+<h2>قائمة البلاد</h2>
+
+<p class="float_left">
+    @Html.ActionLink("إدخال بلد جديد", "Create")
+</p>
+<table class="table table-condensed">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CityName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CityName)
+        </td>
+        <td>
+            @Html.ActionLink("تعديل ", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("التفاصيل", "Details", new { id=item.ID }) |
+            @Html.ActionLink("حذف", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

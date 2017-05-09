@@ -1,0 +1,56 @@
+﻿@model Gam3iaWeb.Sponsor
+
+@{
+    ViewBag.Title = "حذف";
+}
+
+<h2>حذف</h2>
+
+<h3>هل أنت واثق من حذف هذا العنصر ؟</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SponsorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SponsorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SponsorPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SponsorPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SponsorAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SponsorAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SponsorNID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SponsorNID)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف" class="btn btn-default" /> |
+            @Html.ActionLink("عودة إلي القائمة", "Index")
+        </div>
+    }
+</div>

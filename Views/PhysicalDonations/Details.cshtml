@@ -1,0 +1,125 @@
+﻿@model Gam3iaWeb.PhysicalDonation
+
+@{
+    ViewBag.Title = "تفاصيل التبرع";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>تفاصيل التبرع</h2>
+<p class="float_left">
+    @Html.ActionLink("تعديل", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("عودة إلي القائمة", "Index")
+</p>
+<div>
+   
+    <hr />
+    <div class="form-horizontal disabledform">
+
+       
+        <div class="form-group">
+            @Html.LabelFor(model => model.DonationType, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.DonationType, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DonationType, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DeviceName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.DeviceName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DeviceName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DeviceState, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.DeviceState, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DeviceState, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CanBeFixedNotNull, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5 col-md-offset-1">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.CanBeFixedNotNull)
+                    @Html.ValidationMessageFor(model => model.CanBeFixed, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FixFees, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.FixFees, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FixFees, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ReceiveDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.ReceiveDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ReceiveDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IsSelledNotNull, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5 col-md-offset-1">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.IsSelledNotNull)
+                    @Html.ValidationMessageFor(model => model.IsSelled, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IsDelivered, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5 col-md-offset-1">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.IsDeliveredNotNull)
+                    @Html.ValidationMessageFor(model => model.IsDeliveredNotNull, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SellPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.SellPrice, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SellPrice, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SellDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.SellDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SellDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DonatorID, "اسم المتبرع", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.Donator.DonatorName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DonatorID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PoorID, "اسم الحاله (في حالة تسليم التبرع)", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.Poor.PoorName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PoorID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+       
+    </div>
+</div>
+

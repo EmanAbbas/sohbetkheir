@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Gam3iaWeb.Donation>
+
+@{
+    ViewBag.Title = "قائمة التبرعات الماليه";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>قائمة التبرعات المالية</h2>
+
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        @Html.ActionLink("تبرع من متبرع جديد", "CreateNew", "Donations", null, new { @class = "btn btn-default", @role = "button" })
+    </div>
+    <div class="col-md-4"> @Html.ActionLink("تبرع من متبرع سابق", "Create", "Donations", null, new { @class = "btn btn-default", @role = "button" })</div>
+
+</div>
+<table class="table table-condensed">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Donator.DonatorName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DonationValue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VolunteerID)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Donator.DonatorName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonationValue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AspNetUsers.UserName)
+        </td>
+       
+        <td>
+            @Html.ActionLink("تعديل", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("التفاصيل", "Details", new { id=item.ID }) |
+            @Html.ActionLink("حذف", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

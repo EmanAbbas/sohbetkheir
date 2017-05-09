@@ -1,0 +1,26 @@
+﻿@model Gam3iaWeb.City
+
+@{
+    ViewBag.Title = "التفاصيل";
+}
+
+<h2>Details</h2>
+<p class="float_left">
+    @Html.ActionLink("تعديل", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("عودة إلي القائمة", "Index")
+</p>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CityName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CityName)
+        </dd>
+
+    </dl>
+</div>
+

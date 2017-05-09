@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Gam3iaWeb.Sponsorship>
+
+@{
+    ViewBag.Title = "قائمة حالات الكفالات";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>حالات انتظار كفاله</h2>
+
+<p class="float_left">
+    @Html.ActionLink("إنشاء كفالة جديدة", "Create")
+</p>
+<table class="table table-condensed">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PoorID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RequestReceiver)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RequestFollowHolder)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.RequestDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HasLoan)
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Poor.PoorName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RequestReceiver)
+        </td>
+      <td>
+          @Html.DisplayFor(model => item.RequestFollowHolder)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RequestDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HasLoan)
+        </td>
+        <td>
+            @Html.ActionLink("عرض الأقساط", "GetSposorshipInstallments", new { sid = item.ID })
+        </td>
+        <td>
+            @Html.ActionLink("تعديل", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("التفاصيل", "Details", new { id=item.ID }) |
+            @Html.ActionLink("حذف", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

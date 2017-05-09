@@ -1,0 +1,24 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+    @Html.AntiForgeryToken()
+@Html.ActionLink("أهلا  " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { @style = "color:#fff;float:right;text-decoration:none;margin-top:5px;margin-right:-25px" } )
+        <span>--</span> <a href="javascript:document.getElementById('logoutForm').submit()" style="color:red;float:right;text-decoration:none;margin-top:5px;">  تسجيل خروج  </a>
+
+      <span >  @Html.ActionLink(" لوحة التحكم", "Index2", "Home", routeValues: null, htmlAttributes: new { @style = "color:#fff;float:left;text-decoration:none;margin-top:5px;" })</span>
+
+
+    }
+
+   
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        @*<li>@Html.ActionLink("إنشاء حساب", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>*@
+        <li>@Html.ActionLink(" تسجيل دخول", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}
+

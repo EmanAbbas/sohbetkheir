@@ -1,0 +1,825 @@
+﻿@model Gam3iaWeb.Models.CaseStudyViewModel
+
+@{
+    ViewBag.Title = "تفاصيل بحث الحاله";
+}
+
+<h2>تفاصيل بحث الحاله</h2>
+
+<div>
+    <p>
+        @Html.ActionLink("تعديل", "Edit", new { id = Model.CaseID }) |
+        @Html.ActionLink("عودة إلي القائمة", "Index")
+    </p>
+    <hr />
+    <div class="form-horizontal disabledform">
+
+      
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PoorName, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.PoorName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.VillageName, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.VillageName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ReporterName, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.ReporterName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ReporterPhone, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.ReporterPhone, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FamilyClass, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.FamilyClass, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+               
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PartnerName, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.PartnerName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly"  } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PartnerNID, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.PartnerNID, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Breadwinner, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.Breadwinner, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+
+
+               
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Job, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.Job, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EducationState, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.EducationState, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+
+
+               
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ChildrenNo, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.ChildrenNo, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ChildrenInEducationNo, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.ChildrenInEducationNo, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TravelledOrMarriedChildrenNo, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.TravelledOrMarriedChildrenNo, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Telephone1, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.Telephone1, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Telephone2, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.Telephone2, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Target, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.Target, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#collapse1">
+                                    مصروفات الأسره
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse1" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.WaterFees, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-5 col-md-offset-1">
+                                        @Html.EditorFor(model => model.WaterFees, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.ElectricityFees, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-5 col-md-offset-1">
+                                        @Html.EditorFor(model => model.ElectricityFees, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.InstallmentsFees, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-5 col-md-offset-1">
+                                        @Html.EditorFor(model => model.InstallmentsFees, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.DrugsFees, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-5 col-md-offset-1">
+                                        @Html.EditorFor(model => model.DrugsFees, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.RentFees, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-5 col-md-offset-1">
+                                        @Html.EditorFor(model => model.RentFees, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                        @Html.ValidationMessageFor(model => model.RentFees, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.OtherFees, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-5 col-md-offset-1">
+                                        @Html.EditorFor(model => model.OtherFees, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" href="#collapse2">
+                                    دخل الأسره
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse2" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.MonthlySalary, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-5 col-md-offset-1">
+                                        @Html.EditorFor(model => model.MonthlySalary, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.DailySalary, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-5 col-md-offset-1">
+                                        @Html.EditorFor(model => model.DailySalary, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.InsuranceIncome, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-5 col-md-offset-1">
+                                        @Html.EditorFor(model => model.InsuranceIncome, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.SocitiesIncome, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-5 col-md-offset-1">
+                                        @Html.EditorFor(model => model.SocitiesIncome, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.MaashIncome, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-5 col-md-offset-1">
+                                        @Html.EditorFor(model => model.MaashIncome, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.OtherIncome, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-5 col-md-offset-1">
+                                        @Html.EditorFor(model => model.OtherIncome, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="panel-group" id="accordion">
+
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                            ممتلكات الأسره
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>ملك</h3>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.LandsOwned, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-5 col-md-offset-1">
+                                        @Html.EditorFor(model => model.LandsOwned, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.AnimalsOwned, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-5 col-md-offset-1">
+                                        @Html.EditorFor(model => model.AnimalsOwned, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.BirdsOwned, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-5 col-md-offset-1">
+                                        @Html.EditorFor(model => model.BirdsOwned, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.OtherOwned, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-5 col-md-offset-1">
+                                        @Html.EditorFor(model => model.OtherOwned, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h3>أجهزة</h3>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.DevicesOwned, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-5 col-md-offset-1">
+                                        @Html.EditorFor(model => model.DevicesOwned, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                            بيانات السكن
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse4" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.RoomsNo, htmlAttributes: new { @class = "control-label col-md-3" })
+                            <div class="col-md-5 col-md-offset-1">
+                                @Html.EditorFor(model => model.RoomsNo, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.HouseType, htmlAttributes: new { @class = "control-label col-md-3" })
+                            <div class="col-md-5 col-md-offset-1">
+                                @Html.EditorFor(model => model.HouseType, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.WallsType, htmlAttributes: new { @class = "control-label col-md-3" })
+                            <div class="col-md-5 col-md-offset-1">
+                                @Html.EditorFor(model => model.WallsType, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+
+
+                               
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.RoofType, htmlAttributes: new { @class = "control-label col-md-3" })
+                            <div class="col-md-5 col-md-offset-1">
+                                @Html.EditorFor(model => model.RoofType, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Floor, htmlAttributes: new { @class = "control-label col-md-3" })
+                            <div class="col-md-5 col-md-offset-1">
+                                @Html.EditorFor(model => model.Floor, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-inline">
+                                @Html.LabelFor(model => model.HasWaterLine, htmlAttributes: new { @class = "control-label col-md-3" })
+                                <div class="col-md-2">
+                                    <div class="checkbox">
+                                        @Html.CheckBoxFor(model => model.HasWaterLine)
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-inline">
+                                @Html.LabelFor(model => model.HasElectLine, htmlAttributes: new { @class = "control-label col-md-3" })
+                                <div class="col-md-2">
+                                    <div class="checkbox">
+                                        @Html.CheckBoxFor(model => model.HasElectLine)
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-inline">
+                                @Html.LabelFor(model => model.HasSarfLine, htmlAttributes: new { @class = "control-label col-md-3" })
+                                <div class="col-md-2">
+                                    <div class="checkbox">
+                                        @Html.CheckBoxFor(model => model.HasSarfLine)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.OtherLines, htmlAttributes: new { @class = "control-label col-md-3" })
+                            <div class="col-md-5 col-md-offset-1">
+                                @Html.EditorFor(model => model.OtherLines, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ReporterName, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.ReporterName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ReviewerName, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.ReviewerName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ResearchDate, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.TextBoxFor(model => model.ResearchDate, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.VolunteerID, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.EditorFor(model => model.VolunteerName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Comments, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-5 col-md-offset-1">
+                @Html.TextAreaFor(model => model.Comments, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+        <div class="form-inline">
+            @Html.LabelFor(model => model.IsDeserved, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-2">
+                <div class="checkbox">
+                    @Html.CheckBoxFor(model => model.IsDeserved, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    @*<dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VillageName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VillageName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReporterName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReporterName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReporterPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReporterPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FamilyClass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FamilyClass)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PartnerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PartnerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PartnerNID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PartnerNID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Breadwinner)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Breadwinner)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Job)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EducationState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EducationState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChildrenNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChildrenNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChildrenInEducationNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChildrenInEducationNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TravelledOrMarriedChildrenNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TravelledOrMarriedChildrenNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telephone1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telephone1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telephone2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telephone2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Target)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Target)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReviewerOpinion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReviewerOpinion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WaterFees)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WaterFees)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ElectricityFees)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ElectricityFees)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstallmentsFees)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstallmentsFees)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DrugsFees)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DrugsFees)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RentFees)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RentFees)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OtherFees)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OtherFees)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MonthlySalary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MonthlySalary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DailySalary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DailySalary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InsuranceIncome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsuranceIncome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SocitiesIncome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SocitiesIncome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaashIncome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaashIncome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OtherIncome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OtherIncome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LandsOwned)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LandsOwned)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnimalsOwned)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnimalsOwned)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BirdsOwned)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BirdsOwned)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OtherOwned)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OtherOwned)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DevicesOwned)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DevicesOwned)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomsNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomsNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HouseType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HouseType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WallsType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WallsType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoofType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoofType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Floor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Floor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasWaterLine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasWaterLine)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasElectLine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasElectLine)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasSarfLine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasSarfLine)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OtherLines)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OtherLines)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunteerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunteerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PoorNID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PoorNID)
+        </dd>
+
+    </dl>*@
+</div>
+

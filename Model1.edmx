@@ -1,0 +1,2279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Gam3iaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CaseStudy">
+          <Key>
+            <PropertyRef Name="CaseID" />
+          </Key>
+          <Property Name="CaseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VillageName" Type="nvarchar" MaxLength="150" />
+          <Property Name="ReporterName" Type="nvarchar" MaxLength="150" />
+          <Property Name="ReporterPhone" Type="nchar" MaxLength="15" />
+          <Property Name="FamilyClass" Type="int" />
+          <Property Name="PartnerName" Type="nvarchar" MaxLength="350" />
+          <Property Name="PartnerNID" Type="nchar" MaxLength="15" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="Breadwinner" Type="int" />
+          <Property Name="Job" Type="nvarchar" MaxLength="100" />
+          <Property Name="EducationState" Type="int" />
+          <Property Name="ChildrenNo" Type="int" />
+          <Property Name="ChildrenInEducationNo" Type="int" />
+          <Property Name="TravelledOrMarriedChildrenNo" Type="int" />
+          <Property Name="Telephone1" Type="nchar" MaxLength="15" />
+          <Property Name="Telephone2" Type="nchar" MaxLength="15" />
+          <Property Name="Target" Type="nvarchar(max)" />
+          <Property Name="ReviewerOpinion" Type="nvarchar(max)" />
+          <Property Name="VolunteerID" Type="nvarchar" MaxLength="128" />
+          <Property Name="WaterFees" Type="int" />
+          <Property Name="ElectricityFees" Type="int" />
+          <Property Name="InstallmentsFees" Type="int" />
+          <Property Name="DrugsFees" Type="int" />
+          <Property Name="RentFees" Type="int" />
+          <Property Name="OtherFees" Type="int" />
+          <Property Name="MonthlySalary" Type="int" />
+          <Property Name="DailySalary" Type="int" />
+          <Property Name="InsuranceIncome" Type="int" />
+          <Property Name="SocitiesIncome" Type="int" />
+          <Property Name="MaashIncome" Type="int" />
+          <Property Name="OtherIncome" Type="int" />
+          <Property Name="LandsOwned" Type="nvarchar" MaxLength="250" />
+          <Property Name="AnimalsOwned" Type="nvarchar" MaxLength="250" />
+          <Property Name="BirdsOwned" Type="nvarchar" MaxLength="250" />
+          <Property Name="OtherOwned" Type="nvarchar" MaxLength="250" />
+          <Property Name="DevicesOwned" Type="nvarchar" MaxLength="250" />
+          <Property Name="RoomsNo" Type="int" />
+          <Property Name="HouseType" Type="int" />
+          <Property Name="WallsType" Type="int" />
+          <Property Name="RoofType" Type="int" />
+          <Property Name="Floor" Type="nvarchar" MaxLength="150" />
+          <Property Name="HasWaterLine" Type="bit" />
+          <Property Name="HasElectLine" Type="bit" />
+          <Property Name="HasSarfLine" Type="bit" />
+          <Property Name="OtherLines" Type="nvarchar" MaxLength="250" />
+          <Property Name="Comments" Type="nvarchar(max)" />
+          <Property Name="PoorID" Type="int" />
+          <Property Name="ResearchDate" Type="datetime" />
+          <Property Name="ReviewerName" Type="nvarchar" MaxLength="200" />
+          <Property Name="IsDeserved" Type="bit" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CityName" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Donation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DonationValue" Type="int" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="VolunteerID" Type="nvarchar" MaxLength="128" />
+          <Property Name="DonatorID" Type="int" />
+        </EntityType>
+        <EntityType Name="Donator">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DonatorName" Type="nvarchar(max)" />
+          <Property Name="DonatorPhone" Type="nchar" MaxLength="50" />
+          <Property Name="DonatorAddress" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar" MaxLength="150" />
+          <Property Name="Tag" Type="nvarchar" MaxLength="250" />
+          <Property Name="Notes" Type="nvarchar(max)" />
+          <Property Name="Job" Type="nvarchar" MaxLength="150" />
+          <Property Name="DonatorNID" Type="nvarchar" MaxLength="20" />
+          <Property Name="JoinedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="GeneralAid">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar(max)" />
+          <Property Name="PoorID" Type="int" />
+          <Property Name="ServiceID" Type="int" />
+          <Property Name="VolunteerID" Type="nvarchar" MaxLength="128" />
+          <Property Name="ReceiveDate" Type="datetime" />
+          <Property Name="Value" Type="int" />
+          <Property Name="Tag" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="GmIncome">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IncomeSource" Type="int" />
+          <Property Name="IncomeValue" Type="int" />
+          <Property Name="EntryDate" Type="datetime" />
+          <Property Name="VolunteerID" Type="nvarchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="GmOutcome">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OutcomeSource" Type="int" />
+          <Property Name="OutcomeValue" Type="int" />
+          <Property Name="EntryDate" Type="datetime" />
+          <Property Name="VolunteerID" Type="nvarchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="Loan">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="Telephone1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telephone2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telephone3" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telephone4" Type="nvarchar" MaxLength="50" />
+          <Property Name="WorkType" Type="int" />
+          <Property Name="WorkAddress" Type="nvarchar(max)" />
+          <Property Name="WorkPhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="LoanValue" Type="int" />
+          <Property Name="LoanReason" Type="nvarchar(max)" />
+          <Property Name="RequestDate" Type="datetime" />
+          <Property Name="RequiredPapersSatisfied" Type="bit" />
+          <Property Name="HasSalaryStatement" Type="bit" />
+          <Property Name="MonthlyIncome" Type="int" />
+          <Property Name="ReceiveDate" Type="datetime" />
+          <Property Name="IsMonthlyPayment" Type="bit" />
+          <Property Name="PaymentBehavior" Type="bit" />
+          <Property Name="IrregularPaymentReason" Type="int" />
+          <Property Name="GuarantorName" Type="nvarchar" MaxLength="250" />
+          <Property Name="GuarantorAddress" Type="nvarchar(max)" />
+          <Property Name="GuarantorPhone1" Type="nchar" MaxLength="50" />
+          <Property Name="GuarantorPhone2" Type="nchar" MaxLength="50" />
+          <Property Name="GuarantorWorkType" Type="int" />
+          <Property Name="GuarantorWorkAddress" Type="nvarchar(max)" />
+          <Property Name="GuarantorWorkPhone" Type="nchar" MaxLength="50" />
+          <Property Name="GuarantorNID" Type="nchar" MaxLength="15" />
+          <Property Name="GuarantorHasSalaryStatement" Type="bit" />
+          <Property Name="VolunteerID" Type="nvarchar" MaxLength="128" />
+          <Property Name="PoorID" Type="int" />
+          <Property Name="HasCompleted" Type="bit" />
+          <Property Name="HasJudged" Type="bit" />
+          <Property Name="Notes" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="LoanInstallment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DueDate" Type="datetime" />
+          <Property Name="Amount" Type="int" />
+          <Property Name="LoanID" Type="int" />
+          <Property Name="Comments" Type="nvarchar(max)" />
+          <Property Name="PoorID" Type="int" />
+        </EntityType>
+        <EntityType Name="OutcomeSource">
+          <Key>
+            <PropertyRef Name="OutcomeSourceID" />
+          </Key>
+          <Property Name="OutcomeSourceID" Type="int" Nullable="false" />
+          <Property Name="OutcomeSourceName" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="PhysicalDonation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DonationType" Type="nvarchar" MaxLength="100" />
+          <Property Name="DeviceName" Type="nvarchar" MaxLength="150" />
+          <Property Name="DeviceState" Type="nvarchar" MaxLength="100" />
+          <Property Name="CanBeFixed" Type="bit" />
+          <Property Name="FixFees" Type="int" />
+          <Property Name="ReceiveDate" Type="datetime" />
+          <Property Name="IsSelled" Type="bit" />
+          <Property Name="IsDelivered" Type="bit" />
+          <Property Name="SellPrice" Type="int" />
+          <Property Name="SellDate" Type="datetime" />
+          <Property Name="VolunteerID" Type="nvarchar" MaxLength="128" />
+          <Property Name="DonatorID" Type="int" />
+          <Property Name="PoorID" Type="int" />
+        </EntityType>
+        <EntityType Name="Poor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PoorNID" Type="nchar" MaxLength="15" />
+          <Property Name="PoorName" Type="nvarchar" MaxLength="350" />
+          <Property Name="RegisterDate" Type="datetime" />
+          <Property Name="CityID" Type="int" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="250" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="TotalPrice" Type="int" />
+          <Property Name="SellDate" Type="datetime" />
+          <Property Name="VolunteerID" Type="nvarchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="Relative">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="RelativeName" Type="nvarchar" MaxLength="250" />
+          <Property Name="RelativeNID" Type="nchar" MaxLength="15" />
+          <Property Name="Relativity" Type="nvarchar" MaxLength="100" />
+          <Property Name="BirthDate" Type="date" />
+          <Property Name="EducationStage" Type="nvarchar" MaxLength="250" />
+          <Property Name="EducationOrJob" Type="nvarchar" MaxLength="150" />
+          <Property Name="HealthStatus" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="ServiceID" />
+          </Key>
+          <Property Name="ServiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ServiceName" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="Sponsor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SponsorName" Type="nvarchar(max)" />
+          <Property Name="SponsorPhone" Type="nchar" MaxLength="50" />
+          <Property Name="SponsorAddress" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar" MaxLength="150" />
+          <Property Name="Notes" Type="nvarchar(max)" />
+          <Property Name="Job" Type="nvarchar" MaxLength="150" />
+          <Property Name="SponsorNID" Type="nvarchar" MaxLength="20" />
+          <Property Name="JoinedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Sponsorship">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RequestCase" Type="int" />
+          <Property Name="RequestReceiver" Type="nvarchar" MaxLength="250" />
+          <Property Name="RequestFollowHolder" Type="nvarchar" MaxLength="250" />
+          <Property Name="Amount" Type="int" />
+          <Property Name="PaymentMethodType" Type="int" />
+          <Property Name="WaseetName" Type="nvarchar" MaxLength="250" />
+          <Property Name="WaseetPhone" Type="nchar" MaxLength="50" />
+          <Property Name="SposorChanged" Type="bit" />
+          <Property Name="OldSponsorName" Type="nvarchar" MaxLength="250" />
+          <Property Name="NewSponsorName" Type="nvarchar" MaxLength="250" />
+          <Property Name="ReasonOfChange" Type="nvarchar(max)" />
+          <Property Name="IsStopped" Type="bit" />
+          <Property Name="StopDate" Type="datetime" />
+          <Property Name="StopReason" Type="nvarchar(max)" />
+          <Property Name="VolunteerID" Type="nvarchar" MaxLength="128" />
+          <Property Name="RefuseReason" Type="nvarchar(max)" />
+          <Property Name="IsRefused" Type="bit" />
+          <Property Name="PoorID" Type="int" />
+          <Property Name="SponsorID" Type="int" />
+          <Property Name="RequestDate" Type="datetime" />
+          <Property Name="Income" Type="int" />
+          <Property Name="IncomeSource" Type="nvarchar" MaxLength="350" />
+        </EntityType>
+        <EntityType Name="SponsorshipInstallment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DueDate" Type="datetime" />
+          <Property Name="Amount" Type="nchar" MaxLength="10" />
+          <Property Name="IsCalled" Type="bit" />
+          <Property Name="CallerName" Type="nvarchar" MaxLength="250" />
+          <Property Name="CallDate" Type="datetime" />
+          <Property Name="IsDeliverdToPoor" Type="bit" />
+          <Property Name="DeliveryDate" Type="datetime" />
+          <Property Name="SposorshipID" Type="int" />
+          <Property Name="January" Type="bit" />
+          <Property Name="February" Type="bit" />
+          <Property Name="March" Type="bit" />
+          <Property Name="April" Type="bit" />
+          <Property Name="May" Type="bit" />
+          <Property Name="June" Type="bit" />
+          <Property Name="July" Type="bit" />
+          <Property Name="August" Type="bit" />
+          <Property Name="September" Type="bit" />
+          <Property Name="October" Type="bit" />
+          <Property Name="November" Type="bit" />
+          <Property Name="December" Type="bit" />
+          <Property Name="Year" Type="nvarchar" MaxLength="50" />
+          <Property Name="SponsorID" Type="int" />
+        </EntityType>
+        <EntityType Name="SponsorshipResearch">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ResearcherName" Type="nvarchar" MaxLength="250" />
+          <Property Name="ResearchDate" Type="datetime" />
+          <Property Name="ResearchResponse" Type="nvarchar(max)" />
+          <Property Name="ResearchResults" Type="nvarchar(max)" />
+          <Property Name="SponsorshipStartDate" Type="datetime" />
+          <Property Name="Comments" Type="nvarchar(max)" />
+          <Property Name="VolunteerID" Type="nvarchar" MaxLength="128" />
+          <Property Name="PoorID" Type="int" />
+        </EntityType>
+        <EntityType Name="StudentAid">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StudyYear" Type="nvarchar" MaxLength="50" />
+          <Property Name="SchoolName" Type="nvarchar" MaxLength="250" />
+          <Property Name="RequiredFeesValue" Type="int" />
+          <Property Name="RequiredFeesType" Type="int" />
+          <Property Name="OtherFeesValue" Type="int" />
+          <Property Name="OtherFeesType" Type="int" />
+          <Property Name="VolunteerID" Type="nvarchar" MaxLength="128" />
+          <Property Name="PoorID" Type="int" />
+          <Property Name="SchoolAddress" Type="nvarchar" MaxLength="250" />
+          <Property Name="Notes" Type="nvarchar(max)" />
+          <Property Name="StudentName" Type="nvarchar" MaxLength="350" />
+        </EntityType>
+        <EntityType Name="Volunteer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VolunteerName" Type="nvarchar(max)" />
+          <Property Name="Job" Type="nvarchar" MaxLength="250" />
+          <Property Name="Email" Type="nchar" MaxLength="250" />
+          <Property Name="Notes" Type="nvarchar(max)" />
+          <Property Name="Telephone" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <Association Name="FK_CaseStudy_AspNetUsers">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+          <End Role="CaseStudy" Type="Self.CaseStudy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CaseStudy">
+              <PropertyRef Name="VolunteerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CaseStudy_Poor">
+          <End Role="Poor" Type="Self.Poor" Multiplicity="0..1" />
+          <End Role="CaseStudy" Type="Self.CaseStudy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poor">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CaseStudy">
+              <PropertyRef Name="PoorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Donation_AspNetUsers">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+          <End Role="Donation" Type="Self.Donation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Donation">
+              <PropertyRef Name="VolunteerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Donation_Donator">
+          <End Role="Donator" Type="Self.Donator" Multiplicity="0..1" />
+          <End Role="Donation" Type="Self.Donation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Donator">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Donation">
+              <PropertyRef Name="DonatorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GeneralAid_AspNetUsers">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+          <End Role="GeneralAid" Type="Self.GeneralAid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GeneralAid">
+              <PropertyRef Name="VolunteerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GeneralAid_Poor">
+          <End Role="Poor" Type="Self.Poor" Multiplicity="0..1" />
+          <End Role="GeneralAid" Type="Self.GeneralAid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poor">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GeneralAid">
+              <PropertyRef Name="PoorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GeneralAid_Service">
+          <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
+          <End Role="GeneralAid" Type="Self.GeneralAid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="ServiceID" />
+            </Principal>
+            <Dependent Role="GeneralAid">
+              <PropertyRef Name="ServiceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GmIncome_AspNetUsers">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+          <End Role="GmIncome" Type="Self.GmIncome" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GmIncome">
+              <PropertyRef Name="VolunteerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GmOutcome_AspNetUsers">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+          <End Role="GmOutcome" Type="Self.GmOutcome" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GmOutcome">
+              <PropertyRef Name="VolunteerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Loan_AspNetUsers">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+          <End Role="Loan" Type="Self.Loan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Loan">
+              <PropertyRef Name="VolunteerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Loan_Poor">
+          <End Role="Poor" Type="Self.Poor" Multiplicity="0..1" />
+          <End Role="Loan" Type="Self.Loan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poor">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Loan">
+              <PropertyRef Name="PoorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LoanInstallment_Loan">
+          <End Role="Loan" Type="Self.Loan" Multiplicity="0..1" />
+          <End Role="LoanInstallment" Type="Self.LoanInstallment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Loan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LoanInstallment">
+              <PropertyRef Name="LoanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LoanInstallment_Poor">
+          <End Role="Poor" Type="Self.Poor" Multiplicity="0..1" />
+          <End Role="LoanInstallment" Type="Self.LoanInstallment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poor">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LoanInstallment">
+              <PropertyRef Name="PoorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PhysicalDonation_AspNetUsers">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+          <End Role="PhysicalDonation" Type="Self.PhysicalDonation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PhysicalDonation">
+              <PropertyRef Name="VolunteerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PhysicalDonation_Donator">
+          <End Role="Donator" Type="Self.Donator" Multiplicity="0..1" />
+          <End Role="PhysicalDonation" Type="Self.PhysicalDonation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Donator">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PhysicalDonation">
+              <PropertyRef Name="DonatorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PhysicalDonation_Poor">
+          <End Role="Poor" Type="Self.Poor" Multiplicity="0..1" />
+          <End Role="PhysicalDonation" Type="Self.PhysicalDonation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poor">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PhysicalDonation">
+              <PropertyRef Name="PoorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Poor_City">
+          <End Role="City" Type="Self.City" Multiplicity="0..1" />
+          <End Role="Poor" Type="Self.Poor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Poor">
+              <PropertyRef Name="CityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_AspNetUsers">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="VolunteerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sponsorship_Sponsor">
+          <End Role="Sponsor" Type="Self.Sponsor" Multiplicity="0..1" />
+          <End Role="Sponsorship" Type="Self.Sponsorship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sponsor">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Sponsorship">
+              <PropertyRef Name="SponsorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sponsorship1_Poor">
+          <End Role="Poor" Type="Self.Poor" Multiplicity="0..1" />
+          <End Role="Sponsorship" Type="Self.Sponsorship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poor">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Sponsorship">
+              <PropertyRef Name="PoorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SponsorshipInstallment_Sponsor">
+          <End Role="Sponsor" Type="Self.Sponsor" Multiplicity="0..1" />
+          <End Role="SponsorshipInstallment" Type="Self.SponsorshipInstallment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sponsor">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SponsorshipInstallment">
+              <PropertyRef Name="SponsorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SponsorshipInstallment_Sposorship">
+          <End Role="Sponsorship" Type="Self.Sponsorship" Multiplicity="0..1" />
+          <End Role="SponsorshipInstallment" Type="Self.SponsorshipInstallment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sponsorship">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SponsorshipInstallment">
+              <PropertyRef Name="SposorshipID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SponsorshipResearch_Poor">
+          <End Role="Poor" Type="Self.Poor" Multiplicity="0..1" />
+          <End Role="SponsorshipResearch" Type="Self.SponsorshipResearch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poor">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SponsorshipResearch">
+              <PropertyRef Name="PoorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sposorship_AspNetUsers">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+          <End Role="Sponsorship" Type="Self.Sponsorship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Sponsorship">
+              <PropertyRef Name="VolunteerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SposorshipResearch_AspNetUsers">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+          <End Role="SponsorshipResearch" Type="Self.SponsorshipResearch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SponsorshipResearch">
+              <PropertyRef Name="VolunteerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentAid_AspNetUsers">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="0..1" />
+          <End Role="StudentAid" Type="Self.StudentAid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StudentAid">
+              <PropertyRef Name="VolunteerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentAid_Poor">
+          <End Role="Poor" Type="Self.Poor" Multiplicity="0..1" />
+          <End Role="StudentAid" Type="Self.StudentAid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poor">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StudentAid">
+              <PropertyRef Name="PoorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Gam3iaModelStoreContainer">
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CaseStudy" EntityType="Self.CaseStudy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Donation" EntityType="Self.Donation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Donator" EntityType="Self.Donator" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GeneralAid" EntityType="Self.GeneralAid" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GmIncome" EntityType="Self.GmIncome" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GmOutcome" EntityType="Self.GmOutcome" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Loan" EntityType="Self.Loan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoanInstallment" EntityType="Self.LoanInstallment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OutcomeSource" EntityType="Self.OutcomeSource" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PhysicalDonation" EntityType="Self.PhysicalDonation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Poor" EntityType="Self.Poor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Relative" EntityType="Self.Relative" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sponsor" EntityType="Self.Sponsor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sponsorship" EntityType="Self.Sponsorship" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SponsorshipInstallment" EntityType="Self.SponsorshipInstallment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SponsorshipResearch" EntityType="Self.SponsorshipResearch" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StudentAid" EntityType="Self.StudentAid" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Volunteer" EntityType="Self.Volunteer" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CaseStudy_AspNetUsers" Association="Self.FK_CaseStudy_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="CaseStudy" EntitySet="CaseStudy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CaseStudy_Poor" Association="Self.FK_CaseStudy_Poor">
+            <End Role="Poor" EntitySet="Poor" />
+            <End Role="CaseStudy" EntitySet="CaseStudy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Donation_AspNetUsers" Association="Self.FK_Donation_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Donation" EntitySet="Donation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Donation_Donator" Association="Self.FK_Donation_Donator">
+            <End Role="Donator" EntitySet="Donator" />
+            <End Role="Donation" EntitySet="Donation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GeneralAid_AspNetUsers" Association="Self.FK_GeneralAid_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="GeneralAid" EntitySet="GeneralAid" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GeneralAid_Poor" Association="Self.FK_GeneralAid_Poor">
+            <End Role="Poor" EntitySet="Poor" />
+            <End Role="GeneralAid" EntitySet="GeneralAid" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GeneralAid_Service" Association="Self.FK_GeneralAid_Service">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="GeneralAid" EntitySet="GeneralAid" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GmIncome_AspNetUsers" Association="Self.FK_GmIncome_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="GmIncome" EntitySet="GmIncome" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GmOutcome_AspNetUsers" Association="Self.FK_GmOutcome_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="GmOutcome" EntitySet="GmOutcome" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Loan_AspNetUsers" Association="Self.FK_Loan_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Loan" EntitySet="Loan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Loan_Poor" Association="Self.FK_Loan_Poor">
+            <End Role="Poor" EntitySet="Poor" />
+            <End Role="Loan" EntitySet="Loan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LoanInstallment_Loan" Association="Self.FK_LoanInstallment_Loan">
+            <End Role="Loan" EntitySet="Loan" />
+            <End Role="LoanInstallment" EntitySet="LoanInstallment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LoanInstallment_Poor" Association="Self.FK_LoanInstallment_Poor">
+            <End Role="Poor" EntitySet="Poor" />
+            <End Role="LoanInstallment" EntitySet="LoanInstallment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PhysicalDonation_AspNetUsers" Association="Self.FK_PhysicalDonation_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="PhysicalDonation" EntitySet="PhysicalDonation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PhysicalDonation_Donator" Association="Self.FK_PhysicalDonation_Donator">
+            <End Role="Donator" EntitySet="Donator" />
+            <End Role="PhysicalDonation" EntitySet="PhysicalDonation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PhysicalDonation_Poor" Association="Self.FK_PhysicalDonation_Poor">
+            <End Role="Poor" EntitySet="Poor" />
+            <End Role="PhysicalDonation" EntitySet="PhysicalDonation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Poor_City" Association="Self.FK_Poor_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="Poor" EntitySet="Poor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_AspNetUsers" Association="Self.FK_Product_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sponsorship_Sponsor" Association="Self.FK_Sponsorship_Sponsor">
+            <End Role="Sponsor" EntitySet="Sponsor" />
+            <End Role="Sponsorship" EntitySet="Sponsorship" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sponsorship1_Poor" Association="Self.FK_Sponsorship1_Poor">
+            <End Role="Poor" EntitySet="Poor" />
+            <End Role="Sponsorship" EntitySet="Sponsorship" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SponsorshipInstallment_Sponsor" Association="Self.FK_SponsorshipInstallment_Sponsor">
+            <End Role="Sponsor" EntitySet="Sponsor" />
+            <End Role="SponsorshipInstallment" EntitySet="SponsorshipInstallment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SponsorshipInstallment_Sposorship" Association="Self.FK_SponsorshipInstallment_Sposorship">
+            <End Role="Sponsorship" EntitySet="Sponsorship" />
+            <End Role="SponsorshipInstallment" EntitySet="SponsorshipInstallment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SponsorshipResearch_Poor" Association="Self.FK_SponsorshipResearch_Poor">
+            <End Role="Poor" EntitySet="Poor" />
+            <End Role="SponsorshipResearch" EntitySet="SponsorshipResearch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sposorship_AspNetUsers" Association="Self.FK_Sposorship_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Sponsorship" EntitySet="Sponsorship" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SposorshipResearch_AspNetUsers" Association="Self.FK_SposorshipResearch_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="SponsorshipResearch" EntitySet="SponsorshipResearch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentAid_AspNetUsers" Association="Self.FK_StudentAid_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="StudentAid" EntitySet="StudentAid" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentAid_Poor" Association="Self.FK_StudentAid_Poor">
+            <End Role="Poor" EntitySet="Poor" />
+            <End Role="StudentAid" EntitySet="StudentAid" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Gam3iaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Gam3iaModel.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Gam3iaModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="GmIncome">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IncomeSource" Type="Int32" />
+          <Property Name="IncomeValue" Type="Int32" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
+          <Property Name="VolunteerID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Gam3iaModel.FK_GmIncome_AspNetUsers" FromRole="GmIncome" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="GmOutcome">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OutcomeSource" Type="Int32" />
+          <Property Name="OutcomeValue" Type="Int32" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
+          <Property Name="VolunteerID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Gam3iaModel.FK_GmOutcome_AspNetUsers" FromRole="GmOutcome" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="OutcomeSource">
+          <Key>
+            <PropertyRef Name="OutcomeSourceID" />
+          </Key>
+          <Property Name="OutcomeSourceID" Type="Int32" Nullable="false" />
+          <Property Name="OutcomeSourceName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="TotalPrice" Type="Int32" />
+          <Property Name="SellDate" Type="DateTime" Precision="3" />
+          <Property Name="VolunteerID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Gam3iaModel.FK_Product_AspNetUsers" FromRole="Product" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="Relative">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="RelativeName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="RelativeNID" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="Relativity" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BirthDate" Type="DateTime" Precision="0" />
+          <Property Name="EducationStage" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="EducationOrJob" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="HealthStatus" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="ServiceID" />
+          </Key>
+          <Property Name="ServiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="GeneralAid" Relationship="Gam3iaModel.FK_GeneralAid_Service" FromRole="Service" ToRole="GeneralAid" />
+        </EntityType>
+        <EntityContainer Name="Gam3iaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" />
+          <EntitySet Name="GmIncome" EntityType="Self.GmIncome" />
+          <EntitySet Name="GmOutcome" EntityType="Self.GmOutcome" />
+          <EntitySet Name="OutcomeSource" EntityType="Self.OutcomeSource" />
+          <EntitySet Name="Product" EntityType="Self.Product" />
+          <EntitySet Name="Relative" EntityType="Self.Relative" />
+          <EntitySet Name="Service" EntityType="Self.Service" />
+          <EntitySet Name="LoanInstallment" EntityType="Gam3iaModel.LoanInstallment" />
+          <EntitySet Name="StudentAid" EntityType="Gam3iaModel.StudentAid" />
+          <EntitySet Name="Donation" EntityType="Gam3iaModel.Donation" />
+          <EntitySet Name="PhysicalDonation" EntityType="Gam3iaModel.PhysicalDonation" />
+          <EntitySet Name="CaseStudy" EntityType="Gam3iaModel.CaseStudy" />
+          <EntitySet Name="AspNetUsers" EntityType="Gam3iaModel.AspNetUsers" />
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Gam3iaModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CaseStudy_AspNetUsers" Association="Gam3iaModel.FK_CaseStudy_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="CaseStudy" EntitySet="CaseStudy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Donation_AspNetUsers" Association="Gam3iaModel.FK_Donation_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Donation" EntitySet="Donation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GmIncome_AspNetUsers" Association="Gam3iaModel.FK_GmIncome_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="GmIncome" EntitySet="GmIncome" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GmOutcome_AspNetUsers" Association="Gam3iaModel.FK_GmOutcome_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="GmOutcome" EntitySet="GmOutcome" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PhysicalDonation_AspNetUsers" Association="Gam3iaModel.FK_PhysicalDonation_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="PhysicalDonation" EntitySet="PhysicalDonation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_AspNetUsers" Association="Gam3iaModel.FK_Product_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentAid_AspNetUsers" Association="Gam3iaModel.FK_StudentAid_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="StudentAid" EntitySet="StudentAid" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="Gam3iaModel.AspNetUserRoles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+          <EntitySet Name="GeneralAid" EntityType="Gam3iaModel.GeneralAid" />
+          <AssociationSet Name="FK_GeneralAid_AspNetUsers" Association="Gam3iaModel.FK_GeneralAid_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="GeneralAid" EntitySet="GeneralAid" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GeneralAid_Service" Association="Gam3iaModel.FK_GeneralAid_Service">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="GeneralAid" EntitySet="GeneralAid" />
+          </AssociationSet>
+          <EntitySet Name="Loan" EntityType="Gam3iaModel.Loan" />
+          <AssociationSet Name="FK_Loan_AspNetUsers" Association="Gam3iaModel.FK_Loan_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Loan" EntitySet="Loan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LoanInstallment_Loan" Association="Gam3iaModel.FK_LoanInstallment_Loan">
+            <End Role="Loan" EntitySet="Loan" />
+            <End Role="LoanInstallment" EntitySet="LoanInstallment" />
+          </AssociationSet>
+          <EntitySet Name="Volunteer" EntityType="Gam3iaModel.Volunteer" />
+          <EntitySet Name="City" EntityType="Gam3iaModel.City" />
+          <EntitySet Name="Poor" EntityType="Gam3iaModel.Poor" />
+          <AssociationSet Name="FK_CaseStudy_Poor" Association="Gam3iaModel.FK_CaseStudy_Poor">
+            <End Role="Poor" EntitySet="Poor" />
+            <End Role="CaseStudy" EntitySet="CaseStudy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Poor_City" Association="Gam3iaModel.FK_Poor_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="Poor" EntitySet="Poor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GeneralAid_Poor" Association="Gam3iaModel.FK_GeneralAid_Poor">
+            <End Role="Poor" EntitySet="Poor" />
+            <End Role="GeneralAid" EntitySet="GeneralAid" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Loan_Poor" Association="Gam3iaModel.FK_Loan_Poor">
+            <End Role="Poor" EntitySet="Poor" />
+            <End Role="Loan" EntitySet="Loan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LoanInstallment_Poor" Association="Gam3iaModel.FK_LoanInstallment_Poor">
+            <End Role="Poor" EntitySet="Poor" />
+            <End Role="LoanInstallment" EntitySet="LoanInstallment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PhysicalDonation_Poor" Association="Gam3iaModel.FK_PhysicalDonation_Poor">
+            <End Role="Poor" EntitySet="Poor" />
+            <End Role="PhysicalDonation" EntitySet="PhysicalDonation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentAid_Poor" Association="Gam3iaModel.FK_StudentAid_Poor">
+            <End Role="Poor" EntitySet="Poor" />
+            <End Role="StudentAid" EntitySet="StudentAid" />
+          </AssociationSet>
+          <EntitySet Name="Donator" EntityType="Gam3iaModel.Donator" />
+          <EntitySet Name="Sponsorship" EntityType="Gam3iaModel.Sponsorship" />
+          <EntitySet Name="SponsorshipResearch" EntityType="Gam3iaModel.SponsorshipResearch" />
+          <AssociationSet Name="FK_Sposorship_AspNetUsers" Association="Gam3iaModel.FK_Sposorship_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="Sponsorship" EntitySet="Sponsorship" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SposorshipResearch_AspNetUsers" Association="Gam3iaModel.FK_SposorshipResearch_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="SponsorshipResearch" EntitySet="SponsorshipResearch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Donation_Donator" Association="Gam3iaModel.FK_Donation_Donator">
+            <End Role="Donator" EntitySet="Donator" />
+            <End Role="Donation" EntitySet="Donation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PhysicalDonation_Donator" Association="Gam3iaModel.FK_PhysicalDonation_Donator">
+            <End Role="Donator" EntitySet="Donator" />
+            <End Role="PhysicalDonation" EntitySet="PhysicalDonation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sponsorship1_Poor" Association="Gam3iaModel.FK_Sponsorship1_Poor">
+            <End Role="Poor" EntitySet="Poor" />
+            <End Role="Sponsorship" EntitySet="Sponsorship" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SponsorshipResearch_Poor" Association="Gam3iaModel.FK_SponsorshipResearch_Poor">
+            <End Role="Poor" EntitySet="Poor" />
+            <End Role="SponsorshipResearch" EntitySet="SponsorshipResearch" />
+          </AssociationSet>
+          <EntitySet Name="Sponsor" EntityType="Gam3iaModel.Sponsor" />
+          <EntitySet Name="SponsorshipInstallment" EntityType="Gam3iaModel.SponsorshipInstallment" />
+          <AssociationSet Name="FK_Sponsorship_Sponsor" Association="Gam3iaModel.FK_Sponsorship_Sponsor">
+            <End Role="Sponsor" EntitySet="Sponsor" />
+            <End Role="Sponsorship" EntitySet="Sponsorship" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SponsorshipInstallment_Sponsor" Association="Gam3iaModel.FK_SponsorshipInstallment_Sponsor">
+            <End Role="Sponsor" EntitySet="Sponsor" />
+            <End Role="SponsorshipInstallment" EntitySet="SponsorshipInstallment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SponsorshipInstallment_Sposorship" Association="Gam3iaModel.FK_SponsorshipInstallment_Sposorship">
+            <End Role="Sponsorship" EntitySet="Sponsorship" />
+            <End Role="SponsorshipInstallment" EntitySet="SponsorshipInstallment" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="LoanInstallment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DueDate" Type="DateTime" Precision="3" />
+          <Property Name="Amount" Type="Int32" />
+          <Property Name="LoanID" Type="Int32" />
+          <Property Name="Comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PoorID" Type="Int32" />
+          <NavigationProperty Name="Loan" Relationship="Gam3iaModel.FK_LoanInstallment_Loan" FromRole="LoanInstallment" ToRole="Loan" />
+          <NavigationProperty Name="Poor" Relationship="Gam3iaModel.FK_LoanInstallment_Poor" FromRole="LoanInstallment" ToRole="Poor" />
+        </EntityType>
+        <EntityType Name="StudentAid">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudyYear" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SchoolName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="RequiredFeesValue" Type="Int32" />
+          <Property Name="RequiredFeesType" Type="Int32" />
+          <Property Name="OtherFeesValue" Type="Int32" />
+          <Property Name="OtherFeesType" Type="Int32" />
+          <Property Name="VolunteerID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="PoorID" Type="Int32" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Gam3iaModel.FK_StudentAid_AspNetUsers" FromRole="StudentAid" ToRole="AspNetUsers" />
+          <NavigationProperty Name="Poor" Relationship="Gam3iaModel.FK_StudentAid_Poor" FromRole="StudentAid" ToRole="Poor" />
+          <Property Name="SchoolAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StudentName" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Donation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DonationValue" Type="Int32" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="VolunteerID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="DonatorID" Type="Int32" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Gam3iaModel.FK_Donation_AspNetUsers" FromRole="Donation" ToRole="AspNetUsers" />
+          <NavigationProperty Name="Donator" Relationship="Gam3iaModel.FK_Donation_Donator" FromRole="Donation" ToRole="Donator" />
+        </EntityType>
+        <EntityType Name="PhysicalDonation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DonationType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DeviceName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DeviceState" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CanBeFixed" Type="Boolean" />
+          <Property Name="FixFees" Type="Int32" />
+          <Property Name="ReceiveDate" Type="DateTime" Precision="3" />
+          <Property Name="IsSelled" Type="Boolean" />
+          <Property Name="IsDelivered" Type="Boolean" />
+          <Property Name="SellPrice" Type="Int32" />
+          <Property Name="SellDate" Type="DateTime" Precision="3" />
+          <Property Name="VolunteerID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="DonatorID" Type="Int32" />
+          <Property Name="PoorID" Type="Int32" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Gam3iaModel.FK_PhysicalDonation_AspNetUsers" FromRole="PhysicalDonation" ToRole="AspNetUsers" />
+          <NavigationProperty Name="Poor" Relationship="Gam3iaModel.FK_PhysicalDonation_Poor" FromRole="PhysicalDonation" ToRole="Poor" />
+          <NavigationProperty Name="Donator" Relationship="Gam3iaModel.FK_PhysicalDonation_Donator" FromRole="PhysicalDonation" ToRole="Donator" />
+        </EntityType>
+        <EntityType Name="CaseStudy">
+          <Key>
+            <PropertyRef Name="CaseID" />
+          </Key>
+          <Property Name="CaseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VillageName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ReporterName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ReporterPhone" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="FamilyClass" Type="Int32" />
+          <Property Name="PartnerName" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="PartnerNID" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Breadwinner" Type="Int32" />
+          <Property Name="Job" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EducationState" Type="Int32" />
+          <Property Name="ChildrenNo" Type="Int32" />
+          <Property Name="ChildrenInEducationNo" Type="Int32" />
+          <Property Name="TravelledOrMarriedChildrenNo" Type="Int32" />
+          <Property Name="Telephone1" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="Telephone2" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="Target" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ReviewerOpinion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="VolunteerID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="WaterFees" Type="Int32" />
+          <Property Name="ElectricityFees" Type="Int32" />
+          <Property Name="InstallmentsFees" Type="Int32" />
+          <Property Name="DrugsFees" Type="Int32" />
+          <Property Name="RentFees" Type="Int32" />
+          <Property Name="OtherFees" Type="Int32" />
+          <Property Name="MonthlySalary" Type="Int32" />
+          <Property Name="DailySalary" Type="Int32" />
+          <Property Name="InsuranceIncome" Type="Int32" />
+          <Property Name="SocitiesIncome" Type="Int32" />
+          <Property Name="MaashIncome" Type="Int32" />
+          <Property Name="OtherIncome" Type="Int32" />
+          <Property Name="LandsOwned" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="AnimalsOwned" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="BirdsOwned" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="OtherOwned" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="DevicesOwned" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="RoomsNo" Type="Int32" />
+          <Property Name="HouseType" Type="Int32" />
+          <Property Name="WallsType" Type="Int32" />
+          <Property Name="RoofType" Type="Int32" />
+          <Property Name="Floor" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="HasWaterLine" Type="Boolean" />
+          <Property Name="HasElectLine" Type="Boolean" />
+          <Property Name="HasSarfLine" Type="Boolean" />
+          <Property Name="OtherLines" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PoorID" Type="Int32" />
+          <Property Name="ResearchDate" Type="DateTime" Precision="3" />
+          <Property Name="ReviewerName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeserved" Type="Boolean" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Gam3iaModel.FK_CaseStudy_AspNetUsers" FromRole="CaseStudy" ToRole="AspNetUsers" />
+          <NavigationProperty Name="Poor" Relationship="Gam3iaModel.FK_CaseStudy_Poor" FromRole="CaseStudy" ToRole="Poor" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="Gam3iaModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+          <NavigationProperty Name="CaseStudy" Relationship="Gam3iaModel.FK_CaseStudy_AspNetUsers" FromRole="AspNetUsers" ToRole="CaseStudy" />
+          <NavigationProperty Name="Donation" Relationship="Gam3iaModel.FK_Donation_AspNetUsers" FromRole="AspNetUsers" ToRole="Donation" />
+          <NavigationProperty Name="GmIncome" Relationship="Gam3iaModel.FK_GmIncome_AspNetUsers" FromRole="AspNetUsers" ToRole="GmIncome" />
+          <NavigationProperty Name="GmOutcome" Relationship="Gam3iaModel.FK_GmOutcome_AspNetUsers" FromRole="AspNetUsers" ToRole="GmOutcome" />
+          <NavigationProperty Name="PhysicalDonation" Relationship="Gam3iaModel.FK_PhysicalDonation_AspNetUsers" FromRole="AspNetUsers" ToRole="PhysicalDonation" />
+          <NavigationProperty Name="Product" Relationship="Gam3iaModel.FK_Product_AspNetUsers" FromRole="AspNetUsers" ToRole="Product" />
+          <NavigationProperty Name="StudentAid" Relationship="Gam3iaModel.FK_StudentAid_AspNetUsers" FromRole="AspNetUsers" ToRole="StudentAid" />
+          <NavigationProperty Name="AspNetRoles" Relationship="Gam3iaModel.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+          <NavigationProperty Name="GeneralAid" Relationship="Gam3iaModel.FK_GeneralAid_AspNetUsers" FromRole="AspNetUsers" ToRole="GeneralAid" />
+          <NavigationProperty Name="Loan" Relationship="Gam3iaModel.FK_Loan_AspNetUsers" FromRole="AspNetUsers" ToRole="Loan" />
+          <NavigationProperty Name="Sponsorship" Relationship="Gam3iaModel.FK_Sposorship_AspNetUsers" FromRole="AspNetUsers" ToRole="Sponsorship" />
+          <NavigationProperty Name="SponsorshipResearch" Relationship="Gam3iaModel.FK_SposorshipResearch_AspNetUsers" FromRole="AspNetUsers" ToRole="SponsorshipResearch" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Type="Gam3iaModel.AspNetUsers" Role="AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Gam3iaModel.AspNetUserClaims" Role="AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CaseStudy_AspNetUsers">
+          <End Type="Gam3iaModel.AspNetUsers" Role="AspNetUsers" Multiplicity="0..1" />
+          <End Type="Gam3iaModel.CaseStudy" Role="CaseStudy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CaseStudy">
+              <PropertyRef Name="VolunteerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Donation_AspNetUsers">
+          <End Type="Gam3iaModel.AspNetUsers" Role="AspNetUsers" Multiplicity="0..1" />
+          <End Type="Gam3iaModel.Donation" Role="Donation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Donation">
+              <PropertyRef Name="VolunteerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GmIncome_AspNetUsers">
+          <End Type="Gam3iaModel.AspNetUsers" Role="AspNetUsers" Multiplicity="0..1" />
+          <End Type="Gam3iaModel.GmIncome" Role="GmIncome" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GmIncome">
+              <PropertyRef Name="VolunteerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GmOutcome_AspNetUsers">
+          <End Type="Gam3iaModel.AspNetUsers" Role="AspNetUsers" Multiplicity="0..1" />
+          <End Type="Gam3iaModel.GmOutcome" Role="GmOutcome" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GmOutcome">
+              <PropertyRef Name="VolunteerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PhysicalDonation_AspNetUsers">
+          <End Type="Gam3iaModel.AspNetUsers" Role="AspNetUsers" Multiplicity="0..1" />
+          <End Type="Gam3iaModel.PhysicalDonation" Role="PhysicalDonation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PhysicalDonation">
+              <PropertyRef Name="VolunteerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_AspNetUsers">
+          <End Type="Gam3iaModel.AspNetUsers" Role="AspNetUsers" Multiplicity="0..1" />
+          <End Type="Gam3iaModel.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="VolunteerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentAid_AspNetUsers">
+          <End Type="Gam3iaModel.AspNetUsers" Role="AspNetUsers" Multiplicity="0..1" />
+          <End Type="Gam3iaModel.StudentAid" Role="StudentAid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="StudentAid">
+              <PropertyRef Name="VolunteerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Type="Gam3iaModel.AspNetRoles" Role="AspNetRoles" Multiplicity="*" />
+          <End Type="Gam3iaModel.AspNetUsers" Role="AspNetUsers" Multiplicity="*" />
+        </Association>
+        <EntityType Name="GeneralAid">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PoorID" Type="Int32" />
+          <Property Name="ServiceID" Type="Int32" />
+          <Property Name="VolunteerID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="ReceiveDate" Type="DateTime" Precision="3" />
+          <Property Name="Value" Type="Int32" />
+          <Property Name="Tag" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Gam3iaModel.FK_GeneralAid_AspNetUsers" FromRole="GeneralAid" ToRole="AspNetUsers" />
+          <NavigationProperty Name="Service" Relationship="Gam3iaModel.FK_GeneralAid_Service" FromRole="GeneralAid" ToRole="Service" />
+          <NavigationProperty Name="Poor" Relationship="Gam3iaModel.FK_GeneralAid_Poor" FromRole="GeneralAid" ToRole="Poor" />
+        </EntityType>
+        <Association Name="FK_GeneralAid_AspNetUsers">
+          <End Type="Gam3iaModel.AspNetUsers" Role="AspNetUsers" Multiplicity="0..1" />
+          <End Type="Gam3iaModel.GeneralAid" Role="GeneralAid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GeneralAid">
+              <PropertyRef Name="VolunteerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GeneralAid_Service">
+          <End Type="Gam3iaModel.Service" Role="Service" Multiplicity="0..1" />
+          <End Type="Gam3iaModel.GeneralAid" Role="GeneralAid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="ServiceID" />
+            </Principal>
+            <Dependent Role="GeneralAid">
+              <PropertyRef Name="ServiceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Loan">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WorkType" Type="Int32" />
+          <Property Name="WorkAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WorkPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LoanValue" Type="Int32" />
+          <Property Name="LoanReason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RequestDate" Type="DateTime" Precision="3" />
+          <Property Name="RequiredPapersSatisfied" Type="Boolean" />
+          <Property Name="HasSalaryStatement" Type="Boolean" />
+          <Property Name="MonthlyIncome" Type="Int32" />
+          <Property Name="ReceiveDate" Type="DateTime" Precision="3" />
+          <Property Name="IsMonthlyPayment" Type="Boolean" />
+          <Property Name="PaymentBehavior" Type="Boolean" />
+          <Property Name="IrregularPaymentReason" Type="Int32" />
+          <Property Name="GuarantorName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="GuarantorAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GuarantorPhone1" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="GuarantorPhone2" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="GuarantorWorkType" Type="Int32" />
+          <Property Name="GuarantorWorkAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GuarantorWorkPhone" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="GuarantorNID" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="GuarantorHasSalaryStatement" Type="Boolean" />
+          <Property Name="VolunteerID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="PoorID" Type="Int32" />
+          <Property Name="HasCompleted" Type="Boolean" />
+          <Property Name="HasJudged" Type="Boolean" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Gam3iaModel.FK_Loan_AspNetUsers" FromRole="Loan" ToRole="AspNetUsers" />
+          <NavigationProperty Name="LoanInstallment" Relationship="Gam3iaModel.FK_LoanInstallment_Loan" FromRole="Loan" ToRole="LoanInstallment" />
+          <NavigationProperty Name="Poor" Relationship="Gam3iaModel.FK_Loan_Poor" FromRole="Loan" ToRole="Poor" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_Loan_AspNetUsers">
+          <End Type="Gam3iaModel.AspNetUsers" Role="AspNetUsers" Multiplicity="0..1" />
+          <End Type="Gam3iaModel.Loan" Role="Loan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Loan">
+              <PropertyRef Name="VolunteerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LoanInstallment_Loan">
+          <End Type="Gam3iaModel.Loan" Role="Loan" Multiplicity="0..1" />
+          <End Type="Gam3iaModel.LoanInstallment" Role="LoanInstallment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Loan">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LoanInstallment">
+              <PropertyRef Name="LoanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Volunteer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VolunteerName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Job" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="250" FixedLength="true" Unicode="true" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CityName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Poor" Relationship="Gam3iaModel.FK_Poor_City" FromRole="City" ToRole="Poor" />
+        </EntityType>
+        <EntityType Name="Poor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PoorNID" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="PoorName" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="RegisterDate" Type="DateTime" Precision="3" />
+          <Property Name="CityID" Type="Int32" />
+          <NavigationProperty Name="CaseStudy" Relationship="Gam3iaModel.FK_CaseStudy_Poor" FromRole="Poor" ToRole="CaseStudy" />
+          <NavigationProperty Name="City" Relationship="Gam3iaModel.FK_Poor_City" FromRole="Poor" ToRole="City" />
+          <NavigationProperty Name="GeneralAid" Relationship="Gam3iaModel.FK_GeneralAid_Poor" FromRole="Poor" ToRole="GeneralAid" />
+          <NavigationProperty Name="Loan" Relationship="Gam3iaModel.FK_Loan_Poor" FromRole="Poor" ToRole="Loan" />
+          <NavigationProperty Name="LoanInstallment" Relationship="Gam3iaModel.FK_LoanInstallment_Poor" FromRole="Poor" ToRole="LoanInstallment" />
+          <NavigationProperty Name="PhysicalDonation" Relationship="Gam3iaModel.FK_PhysicalDonation_Poor" FromRole="Poor" ToRole="PhysicalDonation" />
+          <NavigationProperty Name="StudentAid" Relationship="Gam3iaModel.FK_StudentAid_Poor" FromRole="Poor" ToRole="StudentAid" />
+          <NavigationProperty Name="Sponsorship" Relationship="Gam3iaModel.FK_Sponsorship1_Poor" FromRole="Poor" ToRole="Sponsorship" />
+          <NavigationProperty Name="SponsorshipResearch" Relationship="Gam3iaModel.FK_SponsorshipResearch_Poor" FromRole="Poor" ToRole="SponsorshipResearch" />
+        </EntityType>
+        <Association Name="FK_CaseStudy_Poor">
+          <End Type="Gam3iaModel.Poor" Role="Poor" Multiplicity="0..1" />
+          <End Type="Gam3iaModel.CaseStudy" Role="CaseStudy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poor">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CaseStudy">
+              <PropertyRef Name="PoorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Poor_City">
+          <End Type="Gam3iaModel.City" Role="City" Multiplicity="0..1" />
+          <End Type="Gam3iaModel.Poor" Role="Poor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Poor">
+              <PropertyRef Name="CityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GeneralAid_Poor">
+          <End Type="Gam3iaModel.Poor" Role="Poor" Multiplicity="0..1" />
+          <End Type="Gam3iaModel.GeneralAid" Role="GeneralAid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poor">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GeneralAid">
+              <PropertyRef Name="PoorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Loan_Poor">
+          <End Type="Gam3iaModel.Poor" Role="Poor" Multiplicity="0..1" />
+          <End Type="Gam3iaModel.Loan" Role="Loan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poor">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Loan">
+              <PropertyRef Name="PoorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LoanInstallment_Poor">
+          <End Type="Gam3iaModel.Poor" Role="Poor" Multiplicity="0..1" />
+          <End Type="Gam3iaModel.LoanInstallment" Role="LoanInstallment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poor">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LoanInstallment">
+              <PropertyRef Name="PoorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PhysicalDonation_Poor">
+          <End Type="Gam3iaModel.Poor" Role="Poor" Multiplicity="0..1" />
+          <End Type="Gam3iaModel.PhysicalDonation" Role="PhysicalDonation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poor">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PhysicalDonation">
+              <PropertyRef Name="PoorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentAid_Poor">
+          <End Type="Gam3iaModel.Poor" Role="Poor" Multiplicity="0..1" />
+          <End Type="Gam3iaModel.StudentAid" Role="StudentAid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poor">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StudentAid">
+              <PropertyRef Name="PoorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Donator">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DonatorName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DonatorPhone" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="DonatorAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Tag" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Job" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DonatorNID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="JoinedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Donation" Relationship="Gam3iaModel.FK_Donation_Donator" FromRole="Donator" ToRole="Donation" />
+          <NavigationProperty Name="PhysicalDonation" Relationship="Gam3iaModel.FK_PhysicalDonation_Donator" FromRole="Donator" ToRole="PhysicalDonation" />
+        </EntityType>
+        <EntityType Name="Sponsorship">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RequestCase" Type="Int32" />
+          <Property Name="RequestReceiver" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="RequestFollowHolder" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Int32" />
+          <Property Name="PaymentMethodType" Type="Int32" />
+          <Property Name="WaseetName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="WaseetPhone" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="SposorChanged" Type="Boolean" />
+          <Property Name="OldSponsorName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="NewSponsorName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ReasonOfChange" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsStopped" Type="Boolean" />
+          <Property Name="StopDate" Type="DateTime" Precision="3" />
+          <Property Name="StopReason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="VolunteerID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="RefuseReason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsRefused" Type="Boolean" />
+          <Property Name="PoorID" Type="Int32" />
+          <Property Name="SponsorID" Type="Int32" />
+          <Property Name="RequestDate" Type="DateTime" Precision="3" />
+          <Property Name="Income" Type="Int32" />
+          <Property Name="IncomeSource" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Gam3iaModel.FK_Sposorship_AspNetUsers" FromRole="Sponsorship" ToRole="AspNetUsers" />
+          <NavigationProperty Name="Poor" Relationship="Gam3iaModel.FK_Sponsorship1_Poor" FromRole="Sponsorship" ToRole="Poor" />
+          <NavigationProperty Name="Sponsor" Relationship="Gam3iaModel.FK_Sponsorship_Sponsor" FromRole="Sponsorship" ToRole="Sponsor" />
+          <NavigationProperty Name="SponsorshipInstallment" Relationship="Gam3iaModel.FK_SponsorshipInstallment_Sposorship" FromRole="Sponsorship" ToRole="SponsorshipInstallment" />
+        </EntityType>
+        <EntityType Name="SponsorshipResearch">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ResearcherName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ResearchDate" Type="DateTime" Precision="3" />
+          <Property Name="ResearchResponse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ResearchResults" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SponsorshipStartDate" Type="DateTime" Precision="3" />
+          <Property Name="Comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="VolunteerID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="PoorID" Type="Int32" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Gam3iaModel.FK_SposorshipResearch_AspNetUsers" FromRole="SponsorshipResearch" ToRole="AspNetUsers" />
+          <NavigationProperty Name="Poor" Relationship="Gam3iaModel.FK_SponsorshipResearch_Poor" FromRole="SponsorshipResearch" ToRole="Poor" />
+        </EntityType>
+        <Association Name="FK_Sposorship_AspNetUsers">
+          <End Type="Gam3iaModel.AspNetUsers" Role="AspNetUsers" Multiplicity="0..1" />
+          <End Type="Gam3iaModel.Sponsorship" Role="Sponsorship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Sponsorship">
+              <PropertyRef Name="VolunteerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SposorshipResearch_AspNetUsers">
+          <End Type="Gam3iaModel.AspNetUsers" Role="AspNetUsers" Multiplicity="0..1" />
+          <End Type="Gam3iaModel.SponsorshipResearch" Role="SponsorshipResearch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SponsorshipResearch">
+              <PropertyRef Name="VolunteerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Donation_Donator">
+          <End Type="Gam3iaModel.Donator" Role="Donator" Multiplicity="0..1" />
+          <End Type="Gam3iaModel.Donation" Role="Donation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Donator">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Donation">
+              <PropertyRef Name="DonatorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PhysicalDonation_Donator">
+          <End Type="Gam3iaModel.Donator" Role="Donator" Multiplicity="0..1" />
+          <End Type="Gam3iaModel.PhysicalDonation" Role="PhysicalDonation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Donator">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PhysicalDonation">
+              <PropertyRef Name="DonatorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sponsorship1_Poor">
+          <End Type="Gam3iaModel.Poor" Role="Poor" Multiplicity="0..1" />
+          <End Type="Gam3iaModel.Sponsorship" Role="Sponsorship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poor">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Sponsorship">
+              <PropertyRef Name="PoorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SponsorshipResearch_Poor">
+          <End Type="Gam3iaModel.Poor" Role="Poor" Multiplicity="0..1" />
+          <End Type="Gam3iaModel.SponsorshipResearch" Role="SponsorshipResearch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poor">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SponsorshipResearch">
+              <PropertyRef Name="PoorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Sponsor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SponsorName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SponsorPhone" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="SponsorAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Job" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="SponsorNID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="JoinedAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Sponsorship" Relationship="Gam3iaModel.FK_Sponsorship_Sponsor" FromRole="Sponsor" ToRole="Sponsorship" />
+          <NavigationProperty Name="SponsorshipInstallment" Relationship="Gam3iaModel.FK_SponsorshipInstallment_Sponsor" FromRole="Sponsor" ToRole="SponsorshipInstallment" />
+        </EntityType>
+        <EntityType Name="SponsorshipInstallment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DueDate" Type="DateTime" Precision="3" />
+          <Property Name="Amount" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="IsCalled" Type="Boolean" />
+          <Property Name="CallerName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CallDate" Type="DateTime" Precision="3" />
+          <Property Name="IsDeliverdToPoor" Type="Boolean" />
+          <Property Name="DeliveryDate" Type="DateTime" Precision="3" />
+          <Property Name="SposorshipID" Type="Int32" />
+          <Property Name="January" Type="Boolean" />
+          <Property Name="February" Type="Boolean" />
+          <Property Name="March" Type="Boolean" />
+          <Property Name="April" Type="Boolean" />
+          <Property Name="May" Type="Boolean" />
+          <Property Name="June" Type="Boolean" />
+          <Property Name="July" Type="Boolean" />
+          <Property Name="August" Type="Boolean" />
+          <Property Name="September" Type="Boolean" />
+          <Property Name="October" Type="Boolean" />
+          <Property Name="November" Type="Boolean" />
+          <Property Name="December" Type="Boolean" />
+          <Property Name="Year" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SponsorID" Type="Int32" />
+          <NavigationProperty Name="Sponsor" Relationship="Gam3iaModel.FK_SponsorshipInstallment_Sponsor" FromRole="SponsorshipInstallment" ToRole="Sponsor" />
+          <NavigationProperty Name="Sponsorship" Relationship="Gam3iaModel.FK_SponsorshipInstallment_Sposorship" FromRole="SponsorshipInstallment" ToRole="Sponsorship" />
+        </EntityType>
+        <Association Name="FK_Sponsorship_Sponsor">
+          <End Type="Gam3iaModel.Sponsor" Role="Sponsor" Multiplicity="0..1" />
+          <End Type="Gam3iaModel.Sponsorship" Role="Sponsorship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sponsor">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Sponsorship">
+              <PropertyRef Name="SponsorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SponsorshipInstallment_Sponsor">
+          <End Type="Gam3iaModel.Sponsor" Role="Sponsor" Multiplicity="0..1" />
+          <End Type="Gam3iaModel.SponsorshipInstallment" Role="SponsorshipInstallment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sponsor">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SponsorshipInstallment">
+              <PropertyRef Name="SponsorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SponsorshipInstallment_Sposorship">
+          <End Type="Gam3iaModel.Sponsorship" Role="Sponsorship" Multiplicity="0..1" />
+          <End Type="Gam3iaModel.SponsorshipInstallment" Role="SponsorshipInstallment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sponsorship">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SponsorshipInstallment">
+              <PropertyRef Name="SposorshipID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Gam3iaModelStoreContainer" CdmEntityContainer="Gam3iaEntities">
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="Gam3iaModel.AspNetRoles">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserClaims">
+            <EntityTypeMapping TypeName="Gam3iaModel.AspNetUserClaims">
+              <MappingFragment StoreEntitySet="AspNetUserClaims">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GmIncome">
+            <EntityTypeMapping TypeName="Gam3iaModel.GmIncome">
+              <MappingFragment StoreEntitySet="GmIncome">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IncomeSource" ColumnName="IncomeSource" />
+                <ScalarProperty Name="IncomeValue" ColumnName="IncomeValue" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="VolunteerID" ColumnName="VolunteerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GmOutcome">
+            <EntityTypeMapping TypeName="Gam3iaModel.GmOutcome">
+              <MappingFragment StoreEntitySet="GmOutcome">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OutcomeSource" ColumnName="OutcomeSource" />
+                <ScalarProperty Name="OutcomeValue" ColumnName="OutcomeValue" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="VolunteerID" ColumnName="VolunteerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OutcomeSource">
+            <EntityTypeMapping TypeName="Gam3iaModel.OutcomeSource">
+              <MappingFragment StoreEntitySet="OutcomeSource">
+                <ScalarProperty Name="OutcomeSourceID" ColumnName="OutcomeSourceID" />
+                <ScalarProperty Name="OutcomeSourceName" ColumnName="OutcomeSourceName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product">
+            <EntityTypeMapping TypeName="Gam3iaModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+                <ScalarProperty Name="SellDate" ColumnName="SellDate" />
+                <ScalarProperty Name="VolunteerID" ColumnName="VolunteerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Relative">
+            <EntityTypeMapping TypeName="Gam3iaModel.Relative">
+              <MappingFragment StoreEntitySet="Relative">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="RelativeName" ColumnName="RelativeName" />
+                <ScalarProperty Name="RelativeNID" ColumnName="RelativeNID" />
+                <ScalarProperty Name="Relativity" ColumnName="Relativity" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="EducationStage" ColumnName="EducationStage" />
+                <ScalarProperty Name="EducationOrJob" ColumnName="EducationOrJob" />
+                <ScalarProperty Name="HealthStatus" ColumnName="HealthStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Service">
+            <EntityTypeMapping TypeName="Gam3iaModel.Service">
+              <MappingFragment StoreEntitySet="Service">
+                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+                <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoanInstallment">
+            <EntityTypeMapping TypeName="Gam3iaModel.LoanInstallment">
+              <MappingFragment StoreEntitySet="LoanInstallment">
+                <ScalarProperty Name="PoorID" ColumnName="PoorID" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="LoanID" ColumnName="LoanID" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentAid">
+            <EntityTypeMapping TypeName="Gam3iaModel.StudentAid">
+              <MappingFragment StoreEntitySet="StudentAid">
+                <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="SchoolAddress" ColumnName="SchoolAddress" />
+                <ScalarProperty Name="PoorID" ColumnName="PoorID" />
+                <ScalarProperty Name="VolunteerID" ColumnName="VolunteerID" />
+                <ScalarProperty Name="OtherFeesType" ColumnName="OtherFeesType" />
+                <ScalarProperty Name="OtherFeesValue" ColumnName="OtherFeesValue" />
+                <ScalarProperty Name="RequiredFeesType" ColumnName="RequiredFeesType" />
+                <ScalarProperty Name="RequiredFeesValue" ColumnName="RequiredFeesValue" />
+                <ScalarProperty Name="SchoolName" ColumnName="SchoolName" />
+                <ScalarProperty Name="StudyYear" ColumnName="StudyYear" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Donation">
+            <EntityTypeMapping TypeName="Gam3iaModel.Donation">
+              <MappingFragment StoreEntitySet="Donation">
+                <ScalarProperty Name="DonatorID" ColumnName="DonatorID" />
+                <ScalarProperty Name="VolunteerID" ColumnName="VolunteerID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="DonationValue" ColumnName="DonationValue" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PhysicalDonation">
+            <EntityTypeMapping TypeName="Gam3iaModel.PhysicalDonation">
+              <MappingFragment StoreEntitySet="PhysicalDonation">
+                <ScalarProperty Name="PoorID" ColumnName="PoorID" />
+                <ScalarProperty Name="DonatorID" ColumnName="DonatorID" />
+                <ScalarProperty Name="VolunteerID" ColumnName="VolunteerID" />
+                <ScalarProperty Name="SellDate" ColumnName="SellDate" />
+                <ScalarProperty Name="SellPrice" ColumnName="SellPrice" />
+                <ScalarProperty Name="IsDelivered" ColumnName="IsDelivered" />
+                <ScalarProperty Name="IsSelled" ColumnName="IsSelled" />
+                <ScalarProperty Name="ReceiveDate" ColumnName="ReceiveDate" />
+                <ScalarProperty Name="FixFees" ColumnName="FixFees" />
+                <ScalarProperty Name="CanBeFixed" ColumnName="CanBeFixed" />
+                <ScalarProperty Name="DeviceState" ColumnName="DeviceState" />
+                <ScalarProperty Name="DeviceName" ColumnName="DeviceName" />
+                <ScalarProperty Name="DonationType" ColumnName="DonationType" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CaseStudy">
+            <EntityTypeMapping TypeName="Gam3iaModel.CaseStudy">
+              <MappingFragment StoreEntitySet="CaseStudy">
+                <ScalarProperty Name="IsDeserved" ColumnName="IsDeserved" />
+                <ScalarProperty Name="ReviewerName" ColumnName="ReviewerName" />
+                <ScalarProperty Name="ResearchDate" ColumnName="ResearchDate" />
+                <ScalarProperty Name="PoorID" ColumnName="PoorID" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="OtherLines" ColumnName="OtherLines" />
+                <ScalarProperty Name="HasSarfLine" ColumnName="HasSarfLine" />
+                <ScalarProperty Name="HasElectLine" ColumnName="HasElectLine" />
+                <ScalarProperty Name="HasWaterLine" ColumnName="HasWaterLine" />
+                <ScalarProperty Name="Floor" ColumnName="Floor" />
+                <ScalarProperty Name="RoofType" ColumnName="RoofType" />
+                <ScalarProperty Name="WallsType" ColumnName="WallsType" />
+                <ScalarProperty Name="HouseType" ColumnName="HouseType" />
+                <ScalarProperty Name="RoomsNo" ColumnName="RoomsNo" />
+                <ScalarProperty Name="DevicesOwned" ColumnName="DevicesOwned" />
+                <ScalarProperty Name="OtherOwned" ColumnName="OtherOwned" />
+                <ScalarProperty Name="BirdsOwned" ColumnName="BirdsOwned" />
+                <ScalarProperty Name="AnimalsOwned" ColumnName="AnimalsOwned" />
+                <ScalarProperty Name="LandsOwned" ColumnName="LandsOwned" />
+                <ScalarProperty Name="OtherIncome" ColumnName="OtherIncome" />
+                <ScalarProperty Name="MaashIncome" ColumnName="MaashIncome" />
+                <ScalarProperty Name="SocitiesIncome" ColumnName="SocitiesIncome" />
+                <ScalarProperty Name="InsuranceIncome" ColumnName="InsuranceIncome" />
+                <ScalarProperty Name="DailySalary" ColumnName="DailySalary" />
+                <ScalarProperty Name="MonthlySalary" ColumnName="MonthlySalary" />
+                <ScalarProperty Name="OtherFees" ColumnName="OtherFees" />
+                <ScalarProperty Name="RentFees" ColumnName="RentFees" />
+                <ScalarProperty Name="DrugsFees" ColumnName="DrugsFees" />
+                <ScalarProperty Name="InstallmentsFees" ColumnName="InstallmentsFees" />
+                <ScalarProperty Name="ElectricityFees" ColumnName="ElectricityFees" />
+                <ScalarProperty Name="WaterFees" ColumnName="WaterFees" />
+                <ScalarProperty Name="VolunteerID" ColumnName="VolunteerID" />
+                <ScalarProperty Name="ReviewerOpinion" ColumnName="ReviewerOpinion" />
+                <ScalarProperty Name="Target" ColumnName="Target" />
+                <ScalarProperty Name="Telephone2" ColumnName="Telephone2" />
+                <ScalarProperty Name="Telephone1" ColumnName="Telephone1" />
+                <ScalarProperty Name="TravelledOrMarriedChildrenNo" ColumnName="TravelledOrMarriedChildrenNo" />
+                <ScalarProperty Name="ChildrenInEducationNo" ColumnName="ChildrenInEducationNo" />
+                <ScalarProperty Name="ChildrenNo" ColumnName="ChildrenNo" />
+                <ScalarProperty Name="EducationState" ColumnName="EducationState" />
+                <ScalarProperty Name="Job" ColumnName="Job" />
+                <ScalarProperty Name="Breadwinner" ColumnName="Breadwinner" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PartnerNID" ColumnName="PartnerNID" />
+                <ScalarProperty Name="PartnerName" ColumnName="PartnerName" />
+                <ScalarProperty Name="FamilyClass" ColumnName="FamilyClass" />
+                <ScalarProperty Name="ReporterPhone" ColumnName="ReporterPhone" />
+                <ScalarProperty Name="ReporterName" ColumnName="ReporterName" />
+                <ScalarProperty Name="VillageName" ColumnName="VillageName" />
+                <ScalarProperty Name="CaseID" ColumnName="CaseID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="Gam3iaModel.AspNetUsers">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="Gam3iaModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+            <EndProperty Name="AspNetUsers">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="AspNetRoles">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="GeneralAid">
+            <EntityTypeMapping TypeName="Gam3iaModel.GeneralAid">
+              <MappingFragment StoreEntitySet="GeneralAid">
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="ReceiveDate" ColumnName="ReceiveDate" />
+                <ScalarProperty Name="VolunteerID" ColumnName="VolunteerID" />
+                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+                <ScalarProperty Name="PoorID" ColumnName="PoorID" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Loan">
+            <EntityTypeMapping TypeName="Gam3iaModel.Loan">
+              <MappingFragment StoreEntitySet="Loan">
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="HasJudged" ColumnName="HasJudged" />
+                <ScalarProperty Name="HasCompleted" ColumnName="HasCompleted" />
+                <ScalarProperty Name="PoorID" ColumnName="PoorID" />
+                <ScalarProperty Name="VolunteerID" ColumnName="VolunteerID" />
+                <ScalarProperty Name="GuarantorHasSalaryStatement" ColumnName="GuarantorHasSalaryStatement" />
+                <ScalarProperty Name="GuarantorNID" ColumnName="GuarantorNID" />
+                <ScalarProperty Name="GuarantorWorkPhone" ColumnName="GuarantorWorkPhone" />
+                <ScalarProperty Name="GuarantorWorkAddress" ColumnName="GuarantorWorkAddress" />
+                <ScalarProperty Name="GuarantorWorkType" ColumnName="GuarantorWorkType" />
+                <ScalarProperty Name="GuarantorPhone2" ColumnName="GuarantorPhone2" />
+                <ScalarProperty Name="GuarantorPhone1" ColumnName="GuarantorPhone1" />
+                <ScalarProperty Name="GuarantorAddress" ColumnName="GuarantorAddress" />
+                <ScalarProperty Name="GuarantorName" ColumnName="GuarantorName" />
+                <ScalarProperty Name="IrregularPaymentReason" ColumnName="IrregularPaymentReason" />
+                <ScalarProperty Name="PaymentBehavior" ColumnName="PaymentBehavior" />
+                <ScalarProperty Name="IsMonthlyPayment" ColumnName="IsMonthlyPayment" />
+                <ScalarProperty Name="ReceiveDate" ColumnName="ReceiveDate" />
+                <ScalarProperty Name="MonthlyIncome" ColumnName="MonthlyIncome" />
+                <ScalarProperty Name="HasSalaryStatement" ColumnName="HasSalaryStatement" />
+                <ScalarProperty Name="RequiredPapersSatisfied" ColumnName="RequiredPapersSatisfied" />
+                <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+                <ScalarProperty Name="LoanReason" ColumnName="LoanReason" />
+                <ScalarProperty Name="LoanValue" ColumnName="LoanValue" />
+                <ScalarProperty Name="WorkPhone" ColumnName="WorkPhone" />
+                <ScalarProperty Name="WorkAddress" ColumnName="WorkAddress" />
+                <ScalarProperty Name="WorkType" ColumnName="WorkType" />
+                <ScalarProperty Name="Telephone4" ColumnName="Telephone4" />
+                <ScalarProperty Name="Telephone3" ColumnName="Telephone3" />
+                <ScalarProperty Name="Telephone2" ColumnName="Telephone2" />
+                <ScalarProperty Name="Telephone1" ColumnName="Telephone1" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Volunteer">
+            <EntityTypeMapping TypeName="Gam3iaModel.Volunteer">
+              <MappingFragment StoreEntitySet="Volunteer">
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Job" ColumnName="Job" />
+                <ScalarProperty Name="VolunteerName" ColumnName="VolunteerName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="City">
+            <EntityTypeMapping TypeName="Gam3iaModel.City">
+              <MappingFragment StoreEntitySet="City">
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Poor">
+            <EntityTypeMapping TypeName="Gam3iaModel.Poor">
+              <MappingFragment StoreEntitySet="Poor">
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
+                <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+                <ScalarProperty Name="PoorName" ColumnName="PoorName" />
+                <ScalarProperty Name="PoorNID" ColumnName="PoorNID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Donator">
+            <EntityTypeMapping TypeName="Gam3iaModel.Donator">
+              <MappingFragment StoreEntitySet="Donator">
+                <ScalarProperty Name="JoinedAt" ColumnName="JoinedAt" />
+                <ScalarProperty Name="DonatorNID" ColumnName="DonatorNID" />
+                <ScalarProperty Name="Job" ColumnName="Job" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DonatorAddress" ColumnName="DonatorAddress" />
+                <ScalarProperty Name="DonatorPhone" ColumnName="DonatorPhone" />
+                <ScalarProperty Name="DonatorName" ColumnName="DonatorName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sponsorship">
+            <EntityTypeMapping TypeName="Gam3iaModel.Sponsorship">
+              <MappingFragment StoreEntitySet="Sponsorship">
+                <ScalarProperty Name="IncomeSource" ColumnName="IncomeSource" />
+                <ScalarProperty Name="Income" ColumnName="Income" />
+                <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+                <ScalarProperty Name="SponsorID" ColumnName="SponsorID" />
+                <ScalarProperty Name="PoorID" ColumnName="PoorID" />
+                <ScalarProperty Name="IsRefused" ColumnName="IsRefused" />
+                <ScalarProperty Name="RefuseReason" ColumnName="RefuseReason" />
+                <ScalarProperty Name="VolunteerID" ColumnName="VolunteerID" />
+                <ScalarProperty Name="StopReason" ColumnName="StopReason" />
+                <ScalarProperty Name="StopDate" ColumnName="StopDate" />
+                <ScalarProperty Name="IsStopped" ColumnName="IsStopped" />
+                <ScalarProperty Name="ReasonOfChange" ColumnName="ReasonOfChange" />
+                <ScalarProperty Name="NewSponsorName" ColumnName="NewSponsorName" />
+                <ScalarProperty Name="OldSponsorName" ColumnName="OldSponsorName" />
+                <ScalarProperty Name="SposorChanged" ColumnName="SposorChanged" />
+                <ScalarProperty Name="WaseetPhone" ColumnName="WaseetPhone" />
+                <ScalarProperty Name="WaseetName" ColumnName="WaseetName" />
+                <ScalarProperty Name="PaymentMethodType" ColumnName="PaymentMethodType" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="RequestFollowHolder" ColumnName="RequestFollowHolder" />
+                <ScalarProperty Name="RequestReceiver" ColumnName="RequestReceiver" />
+                <ScalarProperty Name="RequestCase" ColumnName="RequestCase" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SponsorshipResearch">
+            <EntityTypeMapping TypeName="Gam3iaModel.SponsorshipResearch">
+              <MappingFragment StoreEntitySet="SponsorshipResearch">
+                <ScalarProperty Name="PoorID" ColumnName="PoorID" />
+                <ScalarProperty Name="VolunteerID" ColumnName="VolunteerID" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="SponsorshipStartDate" ColumnName="SponsorshipStartDate" />
+                <ScalarProperty Name="ResearchResults" ColumnName="ResearchResults" />
+                <ScalarProperty Name="ResearchResponse" ColumnName="ResearchResponse" />
+                <ScalarProperty Name="ResearchDate" ColumnName="ResearchDate" />
+                <ScalarProperty Name="ResearcherName" ColumnName="ResearcherName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sponsor">
+            <EntityTypeMapping TypeName="Gam3iaModel.Sponsor">
+              <MappingFragment StoreEntitySet="Sponsor">
+                <ScalarProperty Name="JoinedAt" ColumnName="JoinedAt" />
+                <ScalarProperty Name="SponsorNID" ColumnName="SponsorNID" />
+                <ScalarProperty Name="Job" ColumnName="Job" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="SponsorAddress" ColumnName="SponsorAddress" />
+                <ScalarProperty Name="SponsorPhone" ColumnName="SponsorPhone" />
+                <ScalarProperty Name="SponsorName" ColumnName="SponsorName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SponsorshipInstallment">
+            <EntityTypeMapping TypeName="Gam3iaModel.SponsorshipInstallment">
+              <MappingFragment StoreEntitySet="SponsorshipInstallment">
+                <ScalarProperty Name="SponsorID" ColumnName="SponsorID" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="December" ColumnName="December" />
+                <ScalarProperty Name="November" ColumnName="November" />
+                <ScalarProperty Name="October" ColumnName="October" />
+                <ScalarProperty Name="September" ColumnName="September" />
+                <ScalarProperty Name="August" ColumnName="August" />
+                <ScalarProperty Name="July" ColumnName="July" />
+                <ScalarProperty Name="June" ColumnName="June" />
+                <ScalarProperty Name="May" ColumnName="May" />
+                <ScalarProperty Name="April" ColumnName="April" />
+                <ScalarProperty Name="March" ColumnName="March" />
+                <ScalarProperty Name="February" ColumnName="February" />
+                <ScalarProperty Name="January" ColumnName="January" />
+                <ScalarProperty Name="SposorshipID" ColumnName="SposorshipID" />
+                <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+                <ScalarProperty Name="IsDeliverdToPoor" ColumnName="IsDeliverdToPoor" />
+                <ScalarProperty Name="CallDate" ColumnName="CallDate" />
+                <ScalarProperty Name="CallerName" ColumnName="CallerName" />
+                <ScalarProperty Name="IsCalled" ColumnName="IsCalled" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

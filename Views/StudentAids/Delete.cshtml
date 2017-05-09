@@ -1,0 +1,97 @@
+﻿@model Gam3iaWeb.StudentAid
+
+@{
+    ViewBag.Title = "حذف";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>حذف</h2>
+
+<h3>هل أنت متأكد من حذف هذا العنصر؟</h3>
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PoorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PoorName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.StudyYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudyYear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SchoolName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SchoolName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequiredFeesValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequiredFeesValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequiredFeesType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AidTypeString)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OtherFeesValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OtherFeesValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OtherFeesType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OtherAidTypeString)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunteerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolunteerName)
+        </dd>
+
+       
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف" class="btn btn-default" /> |
+            @Html.ActionLink("عودة إلي القائمة", "Index")
+        </div>
+    }
+</div>

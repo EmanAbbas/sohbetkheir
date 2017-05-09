@@ -1,0 +1,212 @@
+﻿@model IEnumerable<Gam3iaWeb.Loan>
+
+@{
+    ViewBag.Title = "قروض متأخره السداد";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>  (أكثر من شهر )قروض متأخره السداد</h2>
+
+
+<br />
+<table class="table table-hover table-striped datatable">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.PoorName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReceiveDate)
+            </th>
+
+
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Telephone3)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Telephone4)
+                </th>*@
+            @*<th>
+                    @Html.DisplayNameFor(model => model.WorkType)
+                </th>*@
+            @*<th>
+                    @Html.DisplayNameFor(model => model.WorkAddress)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.WorkPhone)
+                </th>
+            *@
+            <th>
+                @Html.DisplayNameFor(model => model.LoanValue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RemainingInstallments)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.LoanReason)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequestDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RequiredPapersSatisfied)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HasSalaryStatement)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MonthlyIncome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ReceiveDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsMonthlyPayment)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PaymentBehavior)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IrregularPaymentReason)
+                </th>*@
+            @*<th>
+                    @Html.DisplayNameFor(model => model.GuarantorName)
+                </th>*@
+            @*<th>
+                    @Html.DisplayNameFor(model => model.GuarantorAddress)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GuarantorPhone1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GuarantorPhone2)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GuarantorWorkType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GuarantorWorkAddress)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GuarantorWorkPhone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GuarantorNID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GuarantorHasSalaryStatement)
+                </th>*@
+
+            @*<th>
+                    @Html.DisplayNameFor(model => model.PoorName)
+                </th>*@
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Poor.PoorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReceiveDate)
+            </td>
+
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Telephone3)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telephone4)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WorkTypeString)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WorkAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WorkPhone)
+                </td>*@
+
+            <td>
+                @Html.DisplayFor(modelItem => item.LoanValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RemainingInstallments)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.LoanReason)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RequestDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RequiredPapersSatisfied)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HasSalaryStatement)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MonthlyIncome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReceiveDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsMonthlyPayment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PaymentBehavior)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IrregularPaymentReason)
+                </td>*@
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.GuarantorName)
+                </td>*@
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.GuarantorAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GuarantorPhone1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GuarantorPhone2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GuarantorWorkType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GuarantorWorkAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GuarantorWorkPhone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GuarantorNID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GuarantorHasSalaryStatement)
+                </td>*@
+
+            <td>
+                @Html.ActionLink("عرض الأقساط", "GetInstallments", new { loanid = item.ID })
+            </td>
+            <td>
+                @Html.ActionLink("تعديل", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("تفاصيل", "Details", new { id = item.ID }) |
+                @Html.ActionLink("مسح", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>

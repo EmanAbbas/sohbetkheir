@@ -1,0 +1,129 @@
+﻿@model Gam3iaWeb.PhysicalDonation
+
+@{
+    ViewBag.Title = "حذف";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>حذف</h2>
+
+<h3>هل أنت واثق من حذف هذا العنصر؟</h3>
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DonationType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonationType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeviceName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeviceName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeviceState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeviceState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CanBeFixedNotNull)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CanBeFixedNotNull)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FixFees)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FixFees)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReceiveDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReceiveDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsSelled)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsSelled)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsDelivered)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsDelivered)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SellPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SellPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SellDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SellDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AspNetUsers.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AspNetUsers.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Donator.DonatorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Donator.DonatorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Poor.PoorNID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Poor.PoorNID)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

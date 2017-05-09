@@ -1,0 +1,60 @@
+﻿
+@model IEnumerable<Gam3iaWeb.SponsorshipInstallment>
+
+@{
+    ViewBag.Title = "قائمة أقساط الكفالات";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> قائمة أقساط الكفالة</h2>
+<table class="table table-condensed">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DueDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.IsDeliveredString)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeliveryDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sponsorship.SposorshipCode)
+            </th>
+            @*<th></th>*@
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DueDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDeliveredString)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeliveryDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sponsorship.SposorshipCode)
+            </td>
+            @*<td>
+                @Html.ActionLink("تعديل", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("التفاصيل", "Details", new { id = item.ID }) |
+                @Html.ActionLink("حذف", "Delete", new { id = item.ID })
+            </td>*@
+        </tr>
+    }
+
+</table>

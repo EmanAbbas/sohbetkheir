@@ -1,0 +1,73 @@
+﻿
+
+@model IEnumerable<Gam3iaWeb.LoanInstallment>
+
+@{
+    ViewBag.Title = "قائمة الأقساط";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> قائمة أقساط القرض</h2>
+
+<p class="float_left">
+   
+    @Html.ActionLink("عودة إلي القائمة", "Index")
+</p>
+<br />
+
+@if (ViewBag.NextInstallmentDateMsg != null)
+{
+    <p class="label-info">
+    @ViewBag.NextInstallmentDateMsg
+ </p>
+   
+}
+<table class="table table-condensed">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PoorName)
+            </th>
+
+
+
+            <th>
+                @Html.DisplayNameFor(model => model.DueDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+
+
+
+            <th></th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PoorName)
+            </td>
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.DueDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+
+            <td>
+                @*@Html.ActionLink("تعديل", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("التفاصيل", "Details", new { id = item.ID }) |
+                @Html.ActionLink("مسح", "Delete", new { id = item.ID })*@
+            </td>
+        </tr>
+    }
+    
+</table>
+<h4>
+  
+</h4>

@@ -1,0 +1,108 @@
+﻿@model Gam3iaWeb.Sponsorship
+
+@{
+    ViewBag.Title = "حذف طلب كفالة";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>حذف طلب كفالة</h2>
+<div class="float_left">
+    
+    @Html.ActionLink("عودة إلي القائمة", "Index")
+</div>
+<h3>هل أنت واثق من حذف هذا العنصر؟</h3>
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PoorID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Poor.PoorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequestCase)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequestCase)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequestReceiver)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequestReceiver)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RequestDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequestDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RequestFollowHolder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequestFollowHolder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaymentMethodType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaymentMethodType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WaseetName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WaseetName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WaseetPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WaseetPhone)
+        </dd>
+
+        
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolunteerID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AspNetUsers.UserName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="حذف" class="btn btn-default" /> 
+        </div>
+    }
+</div>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7096148bc5fc4904a3458382bcdf3335" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="Gam3iaModel.AspNetRoles" Width="1.5" PointX="0.75" PointY="24.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gam3iaModel.AspNetUserClaims" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gam3iaModel.GmIncome" Width="1.5" PointX="5.25" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gam3iaModel.GmOutcome" Width="1.5" PointX="5.25" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gam3iaModel.OutcomeSource" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gam3iaModel.Product" Width="1.5" PointX="5.25" PointY="35.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gam3iaModel.Relative" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gam3iaModel.Service" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Gam3iaModel.LoanInstallment" Width="1.5" PointX="7.5" PointY="21.625" />
+        <EntityTypeShape EntityType="Gam3iaModel.StudentAid" Width="1.5" PointX="8.25" PointY="17.25" />
+        <EntityTypeShape EntityType="Gam3iaModel.Donation" Width="1.5" PointX="8.25" PointY="27.375" />
+        <EntityTypeShape EntityType="Gam3iaModel.PhysicalDonation" Width="1.5" PointX="10.25" PointY="21.625" />
+        <EntityTypeShape EntityType="Gam3iaModel.CaseStudy" Width="1.5" PointX="13.25" PointY="17.5" />
+        <EntityTypeShape EntityType="Gam3iaModel.AspNetUsers" Width="1.5" PointX="3" PointY="22.75" />
+        <AssociationConnector Association="Gam3iaModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="Gam3iaModel.FK_CaseStudy_AspNetUsers" />
+        <AssociationConnector Association="Gam3iaModel.FK_Donation_AspNetUsers" />
+        <AssociationConnector Association="Gam3iaModel.FK_GmIncome_AspNetUsers" />
+        <AssociationConnector Association="Gam3iaModel.FK_GmOutcome_AspNetUsers" />
+        <AssociationConnector Association="Gam3iaModel.FK_PhysicalDonation_AspNetUsers" />
+        <AssociationConnector Association="Gam3iaModel.FK_Product_AspNetUsers" />
+        <AssociationConnector Association="Gam3iaModel.FK_StudentAid_AspNetUsers" />
+        <AssociationConnector Association="Gam3iaModel.AspNetUserRoles" />
+        <EntityTypeShape EntityType="Gam3iaModel.GeneralAid" Width="1.5" PointX="8" PointY="13.125" />
+        <AssociationConnector Association="Gam3iaModel.FK_GeneralAid_AspNetUsers" />
+        <AssociationConnector Association="Gam3iaModel.FK_GeneralAid_Service" />
+        <EntityTypeShape EntityType="Gam3iaModel.Loan" Width="1.5" PointX="8.25" PointY="30.625" />
+        <AssociationConnector Association="Gam3iaModel.FK_Loan_AspNetUsers" />
+        <AssociationConnector Association="Gam3iaModel.FK_LoanInstallment_Loan" />
+        <EntityTypeShape EntityType="Gam3iaModel.Volunteer" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Gam3iaModel.City" Width="1.5" PointX="3.375" PointY="8.125" />
+        <EntityTypeShape EntityType="Gam3iaModel.Poor" Width="1.5" PointX="5.625" PointY="7" />
+        <AssociationConnector Association="Gam3iaModel.FK_CaseStudy_Poor" />
+        <AssociationConnector Association="Gam3iaModel.FK_Poor_City" />
+        <AssociationConnector Association="Gam3iaModel.FK_GeneralAid_Poor" />
+        <AssociationConnector Association="Gam3iaModel.FK_Loan_Poor" />
+        <AssociationConnector Association="Gam3iaModel.FK_LoanInstallment_Poor" />
+        <AssociationConnector Association="Gam3iaModel.FK_PhysicalDonation_Poor" />
+        <AssociationConnector Association="Gam3iaModel.FK_StudentAid_Poor" />
+        <EntityTypeShape EntityType="Gam3iaModel.Donator" Width="1.5" PointX="6" PointY="25" />
+        <EntityTypeShape EntityType="Gam3iaModel.Sponsorship" Width="1.5" PointX="10.875" PointY="8.625" />
+        <EntityTypeShape EntityType="Gam3iaModel.SponsorshipResearch" Width="1.5" PointX="10.875" PointY="16.25" />
+        <AssociationConnector Association="Gam3iaModel.FK_Sposorship_AspNetUsers" />
+        <AssociationConnector Association="Gam3iaModel.FK_SposorshipResearch_AspNetUsers" />
+        <AssociationConnector Association="Gam3iaModel.FK_Donation_Donator" />
+        <AssociationConnector Association="Gam3iaModel.FK_PhysicalDonation_Donator" />
+        <AssociationConnector Association="Gam3iaModel.FK_Sponsorship1_Poor" />
+        <AssociationConnector Association="Gam3iaModel.FK_SponsorshipResearch_Poor" />
+        <EntityTypeShape EntityType="Gam3iaModel.Sponsor" Width="1.5" PointX="8.625" PointY="9.125" />
+        <EntityTypeShape EntityType="Gam3iaModel.SponsorshipInstallment" Width="1.5" PointX="13.125" PointY="8.875" />
+        <AssociationConnector Association="Gam3iaModel.FK_Sponsorship_Sponsor" />
+        <AssociationConnector Association="Gam3iaModel.FK_SponsorshipInstallment_Sponsor" />
+        <AssociationConnector Association="Gam3iaModel.FK_SponsorshipInstallment_Sposorship" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

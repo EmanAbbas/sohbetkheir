@@ -1,0 +1,169 @@
+﻿
+
+@model IEnumerable<Gam3iaWeb.Models.CaseStudyViewModel>
+
+@{
+    ViewBag.Title = "قائمة الأقساط";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> قائمة  أبحاث الحاله المتعلقه بالعنصر</h2>
+
+<p class="float_left">
+
+    @Html.ActionLink("عودة إلي القائمة", "Index")
+</p>
+<br />
+
+@if (ViewBag.RelatedCaseStudyMsg != null)
+{
+    <p class="label-info">
+        @ViewBag.RelatedCaseStudyMsg
+    </p>
+
+}
+
+<table class="table table-hover table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VillageName)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.ReporterName)
+                </th>*@
+            @*<th>
+                    @Html.DisplayNameFor(model => model.ReporterPhone)
+                </th>*@
+            @*<th>
+                    @Html.DisplayNameFor(model => model.FamilyClass)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.PoorName)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.PoorNID)
+                </th>*@
+            @*<th>
+                    @Html.DisplayNameFor(model => model.PartnerName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PartnerNID)
+                </th>*@
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Breadwinner)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Job)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.EducationState)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.ChildrenNo)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.ChildrenInEducationNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TravelledOrMarriedChildrenNo)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Telephone1)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Telephone2)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Target)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.ReviewerOpinion)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.VolunteerName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VillageName)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.ReporterName)
+                </td>*@
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.ReporterPhone)
+                </td>*@
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.FamilyClass)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.PoorName)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.PoorNID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PartnerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PartnerNID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Breadwinner)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Job)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.EducationState)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.ChildrenNo)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.ChildrenInEducationNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TravelledOrMarriedChildrenNo)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Telephone1)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Telephone2)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Target)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.ReviewerOpinion)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.VolunteerName)
+            </td>
+           
+            <td>
+                @*@Html.ActionLink("تعديل", "Edit","CaseStudies", new { id = item.CaseID },null) |*@
+                @Html.ActionLink("التفاصيل", "Details", "CaseStudies", new { id = item.CaseID },null) |
+                @Html.ActionLink("مسح", "Delete", "CaseStudies", new { id = item.CaseID },null)
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+
+
+
