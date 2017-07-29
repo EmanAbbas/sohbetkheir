@@ -61,7 +61,7 @@ namespace Gam3iaWeb.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            //ModelState.Values.SelectMany(v => v.Errors);
             ViewBag.VolunteerID = new SelectList(db.AspNetUsers, "Id", "UserName", donation.VolunteerID);
             ViewBag.DonatorID = new SelectList(db.Donator, "ID", "DonatorName", donation.DonatorID);
             return View(donation);

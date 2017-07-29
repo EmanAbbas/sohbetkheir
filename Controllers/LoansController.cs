@@ -6,6 +6,8 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+
+using Microsoft.AspNet.Identity;
 using Gam3iaWeb;
 
 namespace Gam3iaWeb.Controllers
@@ -22,15 +24,15 @@ namespace Gam3iaWeb.Controllers
             List<Loan> current_loans = new List<Loan>();
             foreach (Loan lo in loans.ToList())
             {
-                bool? is_monthly = lo.IsMonthlyPayment;
-                if (is_monthly != null && is_monthly == true)
-                {
+                //bool? is_monthly = lo.IsMonthlyPayment;
+                //if (is_monthly != null && is_monthly == true)
+                //{
                     DateTime? next_pay_date = db.GetNextInstallmentDate(lo.ID);
                     if (next_pay_date == null || next_pay_date > DateTime.Now)
                         current_loans.Add(lo);
 
 
-                }
+                //}
             }
             return View(current_loans);
            
@@ -118,6 +120,8 @@ namespace Gam3iaWeb.Controllers
             ViewBag.VolunteerID = new SelectList(db.AspNetUsers, "Id", "UserName");
             ViewBag.PoorID = new SelectList(db.Poor, "ID", "PoorName");
             Loan l = new Loan();
+            l.MonthlyPaymentNotNull = true;
+            l.IsMonthlyPayment = true;
             return View(l);
         }
 
@@ -126,11 +130,13 @@ namespace Gam3iaWeb.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID, Address,Telephone1,Telephone2,Telephone3,Telephone4,WorkType,WorkAddress,WorkPhone,LoanValue,LoanReason,RequestDate,RequiredPapersSatisfied,HasSalaryStatement,MonthlyIncome,ReceiveDate,IsMonthlyPayment,GuarantorName,GuarantorAddress,GuarantorPhone1,GuarantorPhone2,GuarantorWorkType,GuarantorWorkAddress,GuarantorWorkPhone,GuarantorNID,GuarantorHasSalaryStatement,VolunteerID,PoorID,Notes")] Loan loan)
+        public ActionResult Create([Bind(Include = "ID, Address,Telephone1,Telephone2,Telephone3,Telephone4,WorkType,WorkAddress,WorkPhone,LoanValue,LoanReason,RequestDate,RequiredPapersSatisfied,HasSalaryStatement,MonthlyIncome,ReceiveDate,MonthlyPaymentNotNull,GuarantorName,GuarantorAddress,GuarantorPhone1,GuarantorPhone2,GuarantorWorkType,GuarantorWorkAddress,GuarantorWorkPhone,GuarantorNID,GuarantorHasSalaryStatement,VolunteerID,PoorID,Notes")] Loan loan)
         {
             var errors=ModelState.Values.SelectMany(v => v.Errors);
             if (ModelState.IsValid)
             {
+                loan.VolunteerID = User.Identity.GetUserId();
+                //loan.IsMonthlyPayment = true;
                 db.Loan.Add(loan);
                 db.SaveChanges();
                 return RedirectToAction("Index");

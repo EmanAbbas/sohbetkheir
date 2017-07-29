@@ -27,9 +27,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Date)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.VolunteerID)
-            </th>
+            </th>*@
 
             <th></th>
         </tr>
@@ -45,9 +45,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.Date)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.AspNetUsers.UserName)
-        </td>
+        </td>*@
        
         <td>
             @Html.ActionLink("تعديل", "Edit", new { id=item.ID }) |

@@ -185,7 +185,7 @@ namespace Gam3iaWeb.Models
 
         [Display(Name = " yyyy/mm/dd تاريخ التبرع")]
         public Nullable<System.DateTime> Date { get; set; }
-        [Required]
+        //[Required]
         [Display(Name = "اسم المتطوع")]
         public string VolunteerID { get; set; }
         [Required]

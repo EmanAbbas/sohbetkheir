@@ -146,10 +146,10 @@ namespace Gam3iaWeb
                 int? paid_amount = (from i in db.LoanInstallment
                                    where i.LoanID == this.ID
                                    select i.Amount.Value).ToList().Sum();
-                if (paid_amount != null)
+                if (this.LoanValue != null && paid_amount != null )
                     return this.LoanValue.Value - paid_amount.Value;
                 else
-                    return this.LoanValue.Value;
+                    return (this.LoanValue??0);
 
             }
         }
